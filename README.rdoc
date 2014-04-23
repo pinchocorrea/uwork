@@ -1,5 +1,5 @@
 == README
-https://www.codeship.io/projects/6ee03c80-ad36-0131-d326-5a3e053281b1/status
+![Codeship Status](https://www.codeship.io/projects/6ee03c80-ad36-0131-d326-5a3e053281b1/status)
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
