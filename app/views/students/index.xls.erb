@@ -1,0 +1,84 @@
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+  	<Table>
+		<Row>
+			<Cell><Data ss:Type="String">Nombre</Data></Cell>
+			<Cell><Data ss:Type="String">Apellido Paterno</Data></Cell>
+			<Cell><Data ss:Type="String">Apellido Materno</Data></Cell>
+			<Cell><Data ss:Type="String">Sexo</Data></Cell>
+			<Cell><Data ss:Type="String">Rut</Data></Cell>
+			<Cell><Data ss:Type="String">EMail</Data></Cell>
+			<Cell><Data ss:Type="String">Cel</Data></Cell>
+			<Cell><Data ss:Type="String">Empresa</Data></Cell>
+			<Cell><Data ss:Type="String">Contrato</Data></Cell>
+			<Cell><Data ss:Type="String">Hijos</Data></Cell>
+			<Cell><Data ss:Type="String">Año Nacimiento</Data></Cell>
+			<Cell><Data ss:Type="String">Comuna</Data></Cell>
+			<Cell><Data ss:Type="String">Colegio</Data></Cell>
+			<Cell><Data ss:Type="String">Universidad</Data></Cell>
+			<Cell><Data ss:Type="String">Carrera</Data></Cell>
+			<Cell><Data ss:Type="String">Ingreso</Data></Cell>
+			<Cell><Data ss:Type="String">Duracion</Data></Cell>
+			<Cell><Data ss:Type="String">Egreso</Data></Cell>
+			<Cell><Data ss:Type="String">Ingles</Data></Cell>
+			<Cell><Data ss:Type="String">Aleman</Data></Cell>
+			<Cell><Data ss:Type="String">Portugues</Data></Cell>
+			<Cell><Data ss:Type="String">Frances</Data></Cell>
+			<Cell><Data ss:Type="String">Chino</Data></Cell>
+			<Cell><Data ss:Type="String">Inicio Disponibilidad</Data></Cell>
+			<Cell><Data ss:Type="String">Fin Disponibilidad</Data></Cell>
+			<Cell><Data ss:Type="String">DiaHora disponible</Data></Cell>
+			<Cell><Data ss:Type="String">Experiencia?</Data></Cell>
+			<Cell><Data ss:Type="String">Donde?</Data></Cell>
+			<Cell><Data ss:Type="String">Renta/hora</Data></Cell>
+			<Cell><Data ss:Type="String">Sector preferente</Data></Cell>
+			<Cell><Data ss:Type="String">Movilizacion propia</Data></Cell>
+			<Cell><Data ss:Type="String">Marca</Data></Cell>
+			<Cell><Data ss:Type="String">Modelo</Data></Cell>
+			<Cell><Data ss:Type="String">Año</Data></Cell>
+		</Row>	   
+		<% @students.each do |item| %>
+			<Row>
+				<Cell><Data ss:Type="String"><%= item.firstname %></Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.lastname %></Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.secondlastname %> </Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.sexo %> </Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.rut %></Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.email %> </Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.cel %></Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.empresaCel %></Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.contratoCel %></Data></Cell>
+				<Cell><Data ss:Type="Number"><%= item.hijos %></Data></Cell>
+				<Cell><Data ss:Type="Number"><%= item.fechaNac %></Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.comunaId %></Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.colegioId %></Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.universidadId %></Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.carreraId %></Data></Cell>
+				<Cell><Data ss:Type="Number"><%= item.fechaIngreso %></Data></Cell>
+				<Cell><Data ss:Type="Number"><%= item.duracion %></Data></Cell>
+				<Cell><Data ss:Type="Number"><%= item.fechaEgreso %></Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.nivelIngles %></Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.nivelAleman %></Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.nivelPortugues %></Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.nivelFrances %></Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.nivelChino %></Data></Cell>
+				<Cell><Data ss:Type="Date"><%= item.dispInicio %></Data></Cell>
+				<Cell><Data ss:Type="Date"><%= item.dispFin %></Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.dispDiaHra %></Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.experiencia %></Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.experiencias %></Data></Cell>
+				<Cell><Data ss:Type="Number"><%= item.rentaHora %></Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.sectorId %></Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.auto %></Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.marcaAuto %></Data></Cell>
+				<Cell><Data ss:Type="String"><%= item.modeloAuto %></Data></Cell>
+				<Cell><Data ss:Type="Number"><%= item.anioAuto %></Data></Cell>
+			</Row>
+		<% end %>
+	</table>
+</Worksheet>
+</Workbook>

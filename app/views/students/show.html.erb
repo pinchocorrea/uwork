@@ -1,0 +1,90 @@
+<h3>Personas Ingresadas</h3>
+<br/>
+<p>
+  Download:
+  <%= link_to "CSV", students_path(format: "csv") %> |
+  <%= link_to "Excel", students_path(format: "xls") %>
+</p>
+<br/>
+	<table class="table table-stripped table-condensed" style="text-align:center color:#B7B7B7; overflow:scroll;">
+		<tr style="text-align:center color:white;">
+			<th>Nombre</th>
+			<th>Apellido Paterno</th>
+			<th>Apellido Materno</th>
+			<th>Sexo</th>
+			<th>Rut</th>
+			<th>EMail</th>
+			<th>Cel</th>
+			<th>Empresa</th>
+			<th>Contrato</th>
+			<th>Hijos</th>
+			<th>Año Nacimiento</th>
+			<th>Comuna</th>
+			<th>Colegio</th>
+			<th>Universidad</th>
+			<th>Carrera</th>
+			<th>Ingreso</th>
+			<th>Duracion</th>
+			<th>Egreso</th>
+			<th>Ingles</th>
+			<th>Aleman</th>
+			<th>Portugues</th>
+			<th>Frances</th>
+			<th>Chino</th>
+			<th>Inicio Disponibilidad</th>
+			<th>Fin Disponibilidad</th>
+			<th>DiaHora disponible</th>
+			<th>Experiencia?</th>
+			<th>Donde?</th>
+			<th>Renta/hora</th>
+			<th>Sector preferente</th>
+			<th>Movilizacion propia</th>
+			<th>Marca</th>
+			<th>Modelo</th>
+			<th>Año</th>
+		</tr>
+
+	   
+	<% if !@students.blank? %>
+		<% for item in @students %>
+			<tr>
+				<td><%= item.firstname %></td>
+				<td><%= item.lastname %></td>
+				<td><%= item.secondlastname %> </td>
+				<td><%= item.sexo %> </td>
+				<td><%= item.rut %></td>
+				<td><%= item.email %> </td>
+				<td><%= item.cel %></td>
+				<td><%= item.empresaCel %></td>
+				<td><%= item.contratoCel %></td>
+				<td><%= item.hijos %></td>
+				<td><%= item.fechaNac %></td>
+
+				<td><%= item.comunaId %></td>
+				<td><%= item.colegioId %></td>
+				<td><%= item.universidadId %></td>
+				<td><%= item.carreraId %></td>
+				<td><%= item.fechaIngreso %></td>
+				<td><%= item.duracion %></td>
+				<td><%= item.fechaEgreso %></td>
+				<td><%= item.nivelIngles %></td>
+				<td><%= item.nivelAleman %></td>
+				<td><%= item.nivelPortugues %></td>
+				<td><%= item.nivelFrances %></td>
+				<td><%= item.nivelChino %></td>
+				<td><%= item.dispInicio %></td>
+				<td><%= item.dispFin %></td>
+				<td><%= item.dispDiaHra %></td>
+				<td><%= item.experiencia %></td>
+				<td><%= item.experiencias %></td>
+				<td><%= item.rentaHora %></td>
+				<td><%= item.sectorId %></td>
+				<td><%= item.auto %></td>
+				<td><%= item.marcaAuto %></td>
+				<td><%= item.modeloAuto %></td>
+				<td><%= item.anioAuto %></td>
+			</tr>
+		<% end %>
+	<% else %>
+	<% end %>
+</table>
