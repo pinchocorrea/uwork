@@ -31,14 +31,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'paperclip', '~> 3.1.4'
-
+gem 'sqlite3', :group => [:development, :test] group :production do gem 'thin' gem 'pg' end
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
-end
-
-group :development, :test do # <<<< :development, not devlopment
-  gem 'sqlite3'
 end
 
 group :production do
