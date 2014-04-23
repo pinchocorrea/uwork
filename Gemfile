@@ -7,7 +7,7 @@ LC_ALL="en_US.UTF-8"
 gem 'rails', '4.0.4'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
@@ -37,11 +37,18 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :development, :test do
-gem 'foreman'
+group :development, :test do # <<<< :development, not devlopment
+  gem 'sqlite3'
 end
 
-gem "mail_form", ">= 1.3.0"
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor'
+end
+#group :development, :test do
+#gem 'foreman'
+#end
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
