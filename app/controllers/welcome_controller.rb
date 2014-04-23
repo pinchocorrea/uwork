@@ -3,6 +3,5 @@ class WelcomeController < ApplicationController
 	    @student = Student.new
 		@students = Student.find(:all)
 		@contact = Contact.new
-
 	end
 end
