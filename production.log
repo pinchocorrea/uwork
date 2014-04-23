@@ -1,0 +1,56 @@
+
+
+Processing ApplicationController#index (for 190.101.37.106 at 2014-04-22 15:54:55) [GET]
+
+ActionController::RoutingError (No route matches "/welcome/index" with {:method=>:get}):
+  
+
+Rendering /home/ryoasset/rails_apps/uwork1/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 190.101.37.106 at 2014-04-22 15:55:08) [GET]
+
+ActionController::RoutingError (No route matches "/welcome/index" with {:method=>:get}):
+  
+
+Rendering /home/ryoasset/rails_apps/uwork1/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 190.101.37.106 at 2014-04-22 15:55:10) [GET]
+
+ActionController::RoutingError (No route matches "/welcome/index" with {:method=>:get}):
+  
+
+Rendering /home/ryoasset/rails_apps/uwork1/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 190.101.37.106 at 2014-04-22 15:55:22) [GET]
+
+ActionController::RoutingError (No route matches "/students/new" with {:method=>:get}):
+  
+
+Rendering /home/ryoasset/rails_apps/uwork1/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 190.101.37.106 at 2014-04-22 16:01:14) [GET]
+
+ActionController::RoutingError (No route matches "/rails/info/properties" with {:method=>:get}):
+  
+
+Rendering /home/ryoasset/rails_apps/uwork1/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 190.101.37.106 at 2014-04-22 16:10:56) [GET]
+
+ActionController::RoutingError (No route matches "/rails/info/properties" with {:method=>:get}):
+  
+
+Rendering /home/ryoasset/rails_apps/uwork1/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 190.101.37.106 at 2014-04-22 16:14:58) [GET]
+
+ActionController::RoutingError (No route matches "/rails/info/properties" with {:method=>:get}):
+  
+
+Rendering /home/ryoasset/rails_apps/uwork1/public/404.html (404 Not Found)
