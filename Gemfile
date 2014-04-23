@@ -31,7 +31,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'paperclip', '~> 3.1.4'
-
+gem 'sqlite3'
 #group :development, :test do
 #  gem 'sqlite3'
 #end
