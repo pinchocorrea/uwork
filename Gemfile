@@ -13,6 +13,10 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
+
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# gem 'therubyracer', platforms: :ruby
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -24,8 +28,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'paperclip', '~> 3.1.4'
 gem 'heroku'
-gem 'heroku-forward'
-gem 'em-proxy'
+
 group :development, :test do
 	gem 'sqlite3'
 end

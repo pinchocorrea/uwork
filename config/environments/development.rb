@@ -27,6 +27,5 @@ Uwork::Application.configure do
   # number of complex assets.
   my_date_formats = { :default => '%d-%m-%Y' } 
   Date::DATE_FORMATS.merge!(my_date_formats)
-  
-  config.middleware.use Rails::Rack::LogTailer
+
 end
