@@ -11,9 +11,9 @@ class StudentsController < ApplicationController
 	end
 
 	def student_params
-		params.require(:student).permit(:firstname, :lastname, :secondlastname, :rut, :fechaNac, :comunaId, :colegioId, :universidadId, :carreraId, :fechaIngreso, :duracion, :fechaEgreso, :nivelIngles, :dispInicio, :dispFin, :dispDiaHra, :experiencia, :experiencias, :rentaHora, :sectorId, :auto, :created_at, :updated_at, :email, :cel, :sexo, :empresaCel, :contratoCel, :nivelAleman, :nivelPortugues, :nivelFrances, :nivelChino, :hijos, :marcaAuto, :modeloAuto, :anioAuto)
+		params.require(:student).permit(:firstname, :lastname, :secondlastname, :rut, :fechaNac, :comunaId, :colegioId, :universidadId, :carreraId, :fechaIngreso, :duracion, :fechaEgreso, :nivelIngles, :dispInicio, :dispFin, :dispDiaHra, :experiencia, :experiencias, :rentaHora, :sectorId, :auto, :created_at, :updated_at, :email, :cel, :sexo, :empresaCel, :contratoCel, :nivelAleman, :nivelPortugues, :nivelFrances, :nivelChino, :hijos, :marcaAuto, :anioAuto)
 	end
-	#:Idiomas, :marcaAuto, :modeloAuto, :anioAuto
+	#:Idiomas, :modeloAuto, 
 
 	def show
 		@students = Student.find(:all)
