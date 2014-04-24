@@ -8,7 +8,6 @@ Bundler.require(:rack)
 port = (ARGV.first || ENV['PORT'] || 3000).to_i
 env = ENV['RACK_ENV'] || 'development'
 
-require 'em-proxy'
 require 'logger'
 require 'heroku-forward'
 require 'heroku/forward/backends/thin'
