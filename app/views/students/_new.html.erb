@@ -8,9 +8,6 @@
 				var rut_validar = document.getElementById("student_rut").value;
 				Rut(rut_validar);
 			}	
-			var dispField = document.getElementById("dispField").value;
-			var lunam = document.getElementById("cbLunAm").checked;
-			var maram = document.getElementById("cbMarAm").checked;
 			function setDisp(){
 				var lunam = document.getElementById("cblunam").checked;
 				var maram = document.getElementById("cbmaram").checked;
@@ -392,6 +389,9 @@ en que se requiere que tengan conocimientos acerca de niños" width="15px" heigh
 						<p style="text-align:center;">(AM = 7:00 - 13:00hrs | PM = 13:00 - 18:00hrs | Vespertino = 18:00 - 23:00hrs)</p>
 					</td>
 						<%= f.hidden_field :dispDiaHra, :id=>"dispField", :value=>"" %>
+						<script>
+							var dispField = document.getElementById("dispField").value;
+						</script>
 				<!--<tr>
 					<td>
 						<div class="form-group">
