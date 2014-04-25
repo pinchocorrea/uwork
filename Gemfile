@@ -4,7 +4,7 @@ LANG="en_US.UTF-8"
 LC_ALL="en_US.UTF-8"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.4'
+gem 'rails', '4.0.4', :require => true
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -19,7 +19,6 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-gem 'thin'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
@@ -27,10 +26,11 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'paperclip', '~> 3.1.4'
-gem 'heroku'
+gem 'heroku', :require=> false
+gem 'gem_bench', :require => true
 
 group :development, :test do
-	gem 'sqlite3'
+	gem 'sqlite3', :require=> false
 end
 group :production do
 	gem 'pg'
