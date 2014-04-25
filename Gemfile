@@ -24,7 +24,7 @@ gem 'turbolinks'
 
 # Build JSOOON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
-gem 'puma'
+
 gem 'paperclip', '~> 3.1.4'
 gem 'heroku', :require=> false
 gem 'gem_bench', :require => true
