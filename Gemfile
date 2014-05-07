@@ -27,7 +27,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'paperclip', '~> 3.1.4'
 gem 'heroku', :require=> false
 gem 'gem_bench', :require => true
-
+gem 'puma'
+gem 'rack-timeout'
 group :development, :test do
 	gem 'sqlite3', :require=> false
 end
