@@ -1,5 +1,5 @@
 <br/>
-<div class="well" style="width:80%; margin-left:auto; margin-right:auto;">
+<div class="well" style="width:80%; margin-left:auto; margin-right:auto; margin-top:100px;">
 	<div class="row" style="margin-left:auto; margin-right:auto; width:100%;">
 		
 		<div class="col-md-12">
@@ -100,9 +100,26 @@
 			}
 
 		</script>
+		<style>
+		.otro-input{
+			-moz-border-radius-bottomleft: 6px;
+			-moz-border-radius-bottomright: 6px;
+			-moz-border-radius-topleft: 6px;
+			-moz-border-radius-topright: 6px;
+			-webkit-border-bottom-left-radius: 6px;
+			-webkit-border-bottom-right-radius: 6px;
+			-webkit-border-top-left-radius: 6px;
+			-webkit-border-top-right-radius: 6px;
+			border-bottom-left-radius: 6px;
+			border-bottom-right-radius: 6px;
+			border-top-left-radius: 6px;
+			border-top-right-radius: 6px;
+			vertical-align:middle;
+			}
+		</style>
 
 		<%= form_for @student,  html: {name:"form1", role: "form", class:"form-horizontal", style:"width:100%; margin:auto; text-align:left;"} do |f| -%>
-			<!--<label for="foto" class="col-sm-4 contol-label" style="text-align:right;">Foto:</label>
+			<!--<label for="foto" class="col-sm-5 contol-label" style="text-align:right;">Foto:</label>
 			<div class="form-group">
 				<%= f.file_field :avatar, :style=>"margin-left:50%;" %>
 			</div>-->
@@ -111,7 +128,7 @@
 					<td colspan="2">
 						<br/>
 						<div class="form-group">
-							<label for="educacion" class="col-sm-4 contol-label" style="text-align:left; font-size:150%; margin-left:1%;">Informacion Personal </label>
+							<label for="educacion" class="col-sm-5 contol-label" style="text-align:left; font-size:150%; margin-left:1%;">Informacion Personal </label>
 								
 						</div>
 					</td>
@@ -119,59 +136,59 @@
 				<tr>
 					<td>
 						<div class="form-group">
-							<label for="nombre" class="col-sm-4 contol-label" style="text-align:left;">Nombre:</label> 
-								<%= f.text_field :firstname, :placeholder=>"Nombre", :required => true, :class=>"form_control" %> 
+							<label for="nombre" class="col-sm-5 contol-label" style="text-align:left;">Nombre:</label> 
+								<%= f.text_field :firstname, :placeholder=>"Nombre", :required => true, :class=>"form_control otro-input" %> 
 						</div>
 					</td>
 					<td>
 						<div class="form-group">
-							<label for="ap2" class="col-sm-4 contol-label" style="text-align:left;">Apellido Paterno: </label>
-								<%= f.text_field :lastname, :placeholder=>"Apellido Paterno", :required => true,:class=>"form_control" %>
+							<label for="ap2" class="col-sm-5 contol-label" style="text-align:left;">Apellido Paterno: </label>
+								<%= f.text_field :lastname, :placeholder=>"Apellido Paterno", :required => true,:class=>"form_control otro-input" %>
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<div class="form-group">
-							<label for="ap3" class="col-sm-4 contol-label" style="text-align:left;">Apellido Materno: </label>
-								<%= f.text_field :secondlastname, :placeholder=>"Apellido Materno", :required => true,:class=>"form_control" %>
+							<label for="ap3" class="col-sm-5 contol-label" style="text-align:left;">Apellido Materno: </label>
+								<%= f.text_field :secondlastname, :placeholder=>"Apellido Materno", :required => true,:class=>"form_control otro-input" %>
 						</div>
 					</td>
 					<td>
 						<div class="form-group">
 							<style> #student_sexo{width:150px;}</style>
-							<label for="sexo" class="col-sm-4 contol-label" style="text-align:left;">Género: </label>
-								<%= f.select(:sexo, options_for_select([['Masculino'],['Femenino'],['Otro']]),{:prompt=>""})%>
+							<label for="sexo" class="col-sm-5 contol-label" style="text-align:left;">Género: </label>
+								<%= f.select(:sexo, options_for_select([['Masculino'],['Femenino'],['Otro']]),{:prompt=>""}, { class: 'chosen-select' })%>
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<div class="form-group">
-							<label for="rut" class="col-sm-4 contol-label" style="text-align:left;">Rut: </label>
-								<%= f.text_field :rut, :onchange=>"validar()",:placeholder=>"12345678-9",:required => true, :class=>"form_control" %> 
+							<label for="rut" class="col-sm-5 contol-label" style="text-align:left;">Rut: </label>
+								<%= f.text_field :rut, :onchange=>"validar()",:placeholder=>"12345678-9",:required => true, :class=>"form_control otro-input" %> 
 						</div>
 						
 					</td>
 					<td>
 						<div class="form-group">
 							<style> #student_fechaNac{width:150px;}</style>
-							<label for="fechaNac" class="col-sm-4 contol-label" style="text-align:left;">Año nacimiento: </label>
-							<%= f.select :fechaNac, (Time.now.year-100..Time.now.year).to_a, {:prompt => ""} %>
+							<label for="fechaNac" class="col-sm-5 contol-label" style="text-align:left;">Año nacimiento: </label>
+							<%= f.select :fechaNac, (Time.now.year-100..Time.now.year).to_a, {:prompt => ""},  { class: 'chosen-select' } %>
 						</div>
 					</td> 
 				</tr>
 				<tr>
 					<td>
 						<div class="form-group">
-							<label for="email" class="col-sm-4 contol-label" style="text-align:left;">E-Mail: </label>
-								<%= f.email_field :email, :required => true, :placeholder=>"ejemplo@sitio.cl", :class=>"form_control" %>
+							<label for="email" class="col-sm-5 contol-label" style="text-align:left;">E-Mail: </label>
+								<%= f.email_field :email, :required => true, :placeholder=>"ejemplo@sitio.cl", :class=>"form_control otro-input" %>
 						</div>
 					</td>
 					<td>
 						<div class="form-group">
 							<style> #student_comunaId{width:150px;}</style>
-							<label for="comuna" class="col-sm-4 contol-label" style="text-align:left;">Comuna donde vives: </label>
+							<label for="comuna" class="col-sm-5 contol-label" style="text-align:left;">Comuna donde vives: </label>
 								<% comunas_array = Comuna.all.map{|comuna| [comuna.nombre]}%>
 								<!--<%#= f.select(:comunaId, options_for_select(comunas_array), {:prompt=>""})%>-->
 								<%= f.select(:comunaId,  Comuna.all.map { |comuna| [comuna.nombre] },  { include_blank: true },  { class: 'chosen-select' } )%>
@@ -183,15 +200,15 @@ ofertas de trabajo que te queden más cerca" width="15px" height="15px">
 				<tr>
 					<td>
 						<div class="form-group">
-							<label for="cel" class="col-sm-4 contol-label" style="text-align:left;">Celular: </label>
-								<%= f.phone_field :cel,:required => true,:placeholder=>"9 XXXX XXXX", :class=>"form_control" %>
+							<label for="cel" class="col-sm-5 contol-label" style="text-align:left;">Celular: </label>
+								<%= f.phone_field :cel,:required => true,:placeholder=>"9 XXXX XXXX", :class=>"form_control otro-input" %>
 						</div>
 					</td>
 					<td>
 						<div class="form-group">
-							<label for="Empresa celular" class="col-sm-4 contol-label" style="text-align:left;">Empresa Celular: </label>
-								<%= f.select(:empresaCel, options_for_select([['Entel'],['Movistar'],['Vtr'],['Claro'],['Virgin']]), {:prompt=>""})%>
-								<%= f.select(:contratoCel, options_for_select([['Prepago'],['Plan']]), {:prompt=>""})%>
+							<label for="Empresa celular" class="col-sm-5 contol-label" style="text-align:left;">Empresa Celular: </label>
+								<%= f.select(:empresaCel, options_for_select([['Claro'],['Entel'],['Movistar'],['Virgin'],['Vtr']]), {:prompt=>""}, { class: 'chosen-select' })%>
+								<%= f.select(:contratoCel, options_for_select([['Plan'],['Prepago']]), {:prompt=>""}, { class: 'otro-input' })%>
 								<img src="http://www.flaticon.com/png/256/8235.png" title="Esta info es necesaria para clasficar a los candidatos
 para aquellas pegas que es necesario usar el teléfono" width="15px" height="15px">
 						</div>
@@ -200,8 +217,8 @@ para aquellas pegas que es necesario usar el teléfono" width="15px" height="15p
 				<tr>
 					<td>
 						<div class="form-group">
-							<label for="Hijos" class="col-sm-4 contol-label" style="text-align:left;">Cantidad de Hijos: </label>
-							<%= f.select :hijos, (0..10).to_a, {:prompt => ""} %>
+							<label for="Hijos" class="col-sm-5 contol-label" style="text-align:left;">Cantidad de Hijos: </label>
+							<%= f.select :hijos, (0..10).to_a, {:prompt => ""}, { class: 'chosen-select' } %>
 							<img src="http://www.flaticon.com/png/256/8235.png" title="Esta info es necesaria para seleccionar candidatos en ofertas laborales
 en que se requiere que tengan conocimientos acerca de niños" width="15px" height="15px">
 						</div>
@@ -211,7 +228,7 @@ en que se requiere que tengan conocimientos acerca de niños" width="15px" heigh
 					<td colspan="2">
 						<br/>
 						<div class="form-group">
-							<label for="educacion" class="col-sm-4 contol-label" style="text-align:left; font-size:150%; margin-left:1%;">Educación </label>
+							<label for="educacion" class="col-sm-5 contol-label" style="text-align:left; font-size:150%; margin-left:1%;">Educación </label>
 								
 						</div>
 					</td>
@@ -220,7 +237,7 @@ en que se requiere que tengan conocimientos acerca de niños" width="15px" heigh
 					<td>
 						<div class="form-group">
 							<style> #student_colegioId{width:150px;}</style>
-							<label for="colegio" class="col-sm-4 contol-label" style="text-align:left;">Colegio: </label>
+							<label for="colegio" class="col-sm-5 contol-label" style="text-align:left;">Colegio: </label>
 								
 								<%= f.select(:colegioId,  Colegio.all.map { |colegio| [colegio.nombre] },  { include_blank: true },  { class: 'chosen-select' } )%>
 								<!--<% colegios_array = Colegio.all.map{|colegio| [colegio.nombre]}%>-->
@@ -231,7 +248,7 @@ en que se requiere que tengan conocimientos acerca de niños" width="15px" heigh
 					<td>
 						<div class="form-group">
 							<style> #student_universidadId{width:150px;}</style>
-							<label for="u" class="col-sm-4 contol-label" style="text-align:left;">Universidad actual: </label>
+							<label for="u" class="col-sm-5 contol-label" style="text-align:left;">Universidad actual: </label>
 							<%= f.select(:universidadId,  Universidad.all.map { |universidad| [universidad.nombre] },  { include_blank: true },  { class: 'chosen-select' } )%>
 							<!--<%# u_array = Universidad.all.map{|u| [u.nombre]}%>
 								<%#= f.select(:universidadId, options_for_select(u_array), {:prompt=>""})%>-->
@@ -242,7 +259,7 @@ en que se requiere que tengan conocimientos acerca de niños" width="15px" heigh
 					<td>
 						<div class="form-group">
 							<style> #student_carreraId{width:150px;}</style>
-							<label for="carrera" class="col-sm-4 contol-label" style="text-align:left;">Carrera Actual: </label>
+							<label for="carrera" class="col-sm-5 contol-label" style="text-align:left;">Carrera Actual: </label>
 							<%= f.select(:carreraId,  Carrera.all.map { |carrera| [carrera.nombre] },  { include_blank: true },  { class: 'chosen-select' } )%>
 							<!--<%# carrera_array = Carrera.all.map{|carrera| [carrera.nombre]}%>
 							<%#= f.select(:carreraId, options_for_select(carrera_array), {:prompt=>""})%>-->
@@ -251,8 +268,8 @@ en que se requiere que tengan conocimientos acerca de niños" width="15px" heigh
 					<td>
 						<div class="form-group">
 							<style> #student_fechaIngreso{width:150px;}</style>
-							<label for="anio1" class="col-sm-4 contol-label" style="text-align:left;">Año Ingreso: </label>
-							<%= f.select :fechaIngreso, (Time.now.year-10..Time.now.year).to_a, {:prompt => ""} %>
+							<label for="anio1" class="col-sm-5 contol-label" style="text-align:left;">Año Ingreso: </label>
+							<%= f.select :fechaIngreso, (Time.now.year-10..Time.now.year).to_a, {:prompt => ""}, { class: 'chosen-select' } %>
 						</div>
 					</td>
 				</tr>
@@ -260,15 +277,15 @@ en que se requiere que tengan conocimientos acerca de niños" width="15px" heigh
 					<td>
 						<div class="form-group">
 							<style> #student_duracion{width:150px;}</style>
-							<label for="durac" class="col-sm-4 contol-label" style="text-align:left;">Duracion: </label>
-							<%= f.select :duracion, (1..10).to_a, {:prompt => ""} %>
+							<label for="durac" class="col-sm-5 contol-label" style="text-align:left;">Duracion: </label>
+							<%= f.select :duracion, (1..10).to_a, {:prompt => ""}, { class: 'chosen-select' } %>
 						</div>
 					</td>
 					<td>
 						<div class="form-group">
 							<style> #student_fechaEgreso{width:150px;}</style>
-							<label for="anio2" class="col-sm-4 contol-label" style="text-align:left;">Fecha Egreso (esperado): </label>
-							<%= f.select :fechaEgreso, (Time.now.year..Time.now.year+10).to_a, {:prompt => ""} %>
+							<label for="anio2" class="col-sm-5 contol-label" style="text-align:left;">Fecha Egreso (esperado): </label>
+							<%= f.select :fechaEgreso, (Time.now.year..Time.now.year+10).to_a, {:prompt => ""}, { class: 'chosen-select' } %>
 						</div>
 					</td>
 				</tr>
@@ -281,19 +298,20 @@ en que se requiere que tengan conocimientos acerca de niños" width="15px" heigh
 									<%= label_tag(:nivelIngles, "Nivel de Ingles: ") %>
 									</td>
 									<td style="border:0px solid black; text-align:right;">
-									<%= f.select(:nivelIngles, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]))%>
+									<%= f.select(:nivelIngles, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), 
+									{ class: 'otro-input' } )%>
 									</td>
 									<td style="border:0px solid black; text-align:right;">
 									<%= label_tag(:nivelAleman, "Nivel de Aleman: ") %>
 									</td>
 									<td style="border:0px solid black; text-align:right;">
-									<%= f.select(:nivelAleman, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]))%>
+									<%= f.select(:nivelAleman, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), { class: 'otro-input' })%>
 									</td>
 									<td style="border:0px solid black; text-align:right;">
 									<%= label_tag(:nivelFrances, "Nivel de Frances: ") %>
 									</td>
 									<td style="border:0px solid black; text-align:right;">
-									<%= f.select(:nivelFrances, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]))%>
+									<%= f.select(:nivelFrances, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), { class: 'otro-input' })%>
 									</td>
 								</tr>
 								<tr>
@@ -301,13 +319,13 @@ en que se requiere que tengan conocimientos acerca de niños" width="15px" heigh
 									<%= label_tag(:nivelPortugues, "Nivel de Portugues: ") %>
 									</td>
 									<td style="border:0px solid black; text-align:right;">
-									<%= f.select(:nivelPortugues, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]))%>
+									<%= f.select(:nivelPortugues, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), { class: 'otro-input' })%>
 									</td>
 									<td style="border:0px solid black; text-align:right;">
 									<%= label_tag(:nivelChino, "Nivel de Chino: ") %>
 									</td>
 									<td style="border:0px solid black; text-align:right;">
-									<%= f.select(:nivelChino, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]))%>
+									<%= f.select(:nivelChino, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), { class: 'chosen-select' })%>
 									</td>
 								</tr>
 							</table>
@@ -318,7 +336,7 @@ en que se requiere que tengan conocimientos acerca de niños" width="15px" heigh
 					<td colspan="2">
 						<div class="form-group">
 							<br/>
-							<label for="educacion" class="col-sm-4 contol-label" style="text-align:left; font-size:150%; margin-left:1%;">Experiencia, disponibilidad y otros</label>
+							<label for="educacion" class="col-sm-5 contol-label" style="text-align:left; font-size:150%; margin-left:1%;">Experiencia, disponibilidad y otros</label>
 						</div>
 					</td>
 				</tr>
@@ -400,13 +418,13 @@ en que se requiere que tengan conocimientos acerca de niños" width="15px" heigh
 				<!--<tr>
 					<td>
 						<div class="form-group">
-							<label for="disp1" class="col-sm-4 contol-label" style="text-align:left;">Disponibilidad para iniciar: </label>
+							<label for="disp1" class="col-sm-5 contol-label" style="text-align:left;">Disponibilidad para iniciar: </label>
 								<%#= f.date_field :dispInicio, :placeholder=>"DD-MM-AAAA", :class=>"form_control", :value => Date.today, required: true %>
 						</div>
 					</td>
 					<td>
 						<div class="form-group">
-							<label for="disp2" class="col-sm-4 contol-label" style="text-align:left;">Fin de disponibilidad: </label>
+							<label for="disp2" class="col-sm-5 contol-label" style="text-align:left;">Fin de disponibilidad: </label>
 								<%#= f.date_field :dispFin, :placeholder=>"DD-MM-AAAA", :class=>"form_control" %>
 						</div>
 					</td>
@@ -415,27 +433,27 @@ en que se requiere que tengan conocimientos acerca de niños" width="15px" heigh
 				<tr>
 					<td>
 						<div class="form-group">
-							<label for="renta" class="col-sm-4 contol-label" style="text-align:left;">Expectativas de renta por hora: </label>
+							<label for="renta" class="col-sm-5 contol-label" style="text-align:left;">Expectativas de renta por hora: </label>
 							<style>
 							#student_rentaHora{
 								width:150px;
 							}</style>
-								<%= f.select :rentaHora, (1000..30000).step(1000).to_a, {:prompt =>"$"} %>
+								<%= f.select :rentaHora, (1000..30000).step(1000).to_a, {:prompt =>"$"}, { class: 'otro-input' } %>
 							<img src="http://www.flaticon.com/png/256/8235.png" title="Recuerda que mientras más bajas sean us espectativas de renta,
 más ofertas recibirás" width="15px" height="15px">
 						</div>
 					</td>
 					<td>
 						<div class="form-group">
-							<label for="rubro" class="col-sm-4 contol-label" style="text-align:left;">Trabajos preferentes: </label>
-								<%= f.text_field :sectorId, :class=>"form_control" %>
+							<label for="rubro" class="col-sm-5 contol-label" style="text-align:left;">Trabajos preferentes: </label>
+								<%= f.text_field :sectorId, :class=>"form_control otro-input" %>
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<div class="form-group">
-							<label for="auto" class="col-sm-4 contol-label" style="text-align:left;">¿Cuentas con movilzacion propia? </label>
+							<label for="auto" class="col-sm-5 contol-label" style="text-align:left;">¿Cuentas con movilzacion propia? </label>
 								<%= f.radio_button :auto, "No" %>No&nbsp;&nbsp;&nbsp;
 								<%= f.radio_button :auto, "Auto" %>Auto&nbsp;&nbsp;&nbsp;
 								<%= f.radio_button :auto, "Moto" %>Moto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -451,12 +469,12 @@ o poner publicidad en tu vehículo" width="15px" height="15px">
 							}
 							#student_marcaAuto{width:95px;}</style>
 								
-							<label for="auto" class="col-sm-4 contol-label" style="text-align:left;">Si marcaste auto, ¿Cuál tienes?: </label>
+							<label for="auto" class="col-sm-5 contol-label" style="text-align:left;">Si marcaste auto, ¿Cuál tienes?: </label>
 								
 								<%= f.select(:marcaAuto,  Auto.all.map { |auto| [auto.nombre] },  { include_blank: true },  { class: 'chosen-select' } )%>
 								<!--<%# auto_array = Auto.all.map{|auto| [auto.nombre]}%>
 								<%#= f.select(:marcaAuto, options_for_select(auto_array), {:prompt=>"Marca/modelo"})%>-->
-								<%= f.select :anioAuto, (Time.now.year-50..Time.now.year).to_a, {:prompt =>"Año"} %>
+								<%= f.select :anioAuto, (Time.now.year-50..Time.now.year).to_a, {:prompt =>"Año"}, { class: 'otro-input' } %>
 								<img src="http://www.flaticon.com/png/256/8235.png" title="Esta info es necesaria para ofrecerte aquellos trabajos en que
 necesitas poner publicidad en tu vehículo" width="15px" height="15px">
 						</div>
@@ -465,7 +483,7 @@ necesitas poner publicidad en tu vehículo" width="15px" height="15px">
 				<tr>
 					<td>
 						<div class="form-group">
-							<label for="exp1" class="col-sm-4 contol-label" style="text-align:left;">Tienes experiencia previa? </label>
+							<label for="exp1" class="col-sm-5 contol-label" style="text-align:left;">Tienes experiencia previa? </label>
 								
 								<%= f.radio_button :experiencia, true %> Si&nbsp;&nbsp;&nbsp;
 								
@@ -474,8 +492,8 @@ necesitas poner publicidad en tu vehículo" width="15px" height="15px">
 					</td>
 					<td>
 						<div class="form-group">
-							<label for="exp2" class="col-sm-4 contol-label" style="text-align:left;">Donde? </label>
-								<%= f.text_area :experiencias, :class=>"form_control" %>
+							<label for="exp2" class="col-sm-5 contol-label" style="text-align:left;">Donde? </label>
+								<%= f.text_area :experiencias, :class=>"form_control otro-input" %>
 						</div>
 					</td>
 				</tr>
