@@ -59,6 +59,7 @@ GEM
     fssm (0.2.10)
     gem_bench (0.0.8)
       bundler (> 1.2)
+    gritter (1.1.0)
     heroku (3.6.0)
       heroku-api (~> 0.3.17)
       launchy (>= 0.3.2)
@@ -166,6 +167,7 @@ DEPENDENCIES
   chosen-rails
   coffee-rails (~> 4.0.0)
   gem_bench
+  gritter
   heroku
   jbuilder (~> 1.2)
   jquery-rails

@@ -438,7 +438,7 @@ en que se requiere que tengan conocimientos acerca de niños" width="15px" heigh
 							#student_rentaHora{
 								width:150px;
 							}</style>
-								<%= f.select :rentaHora, (1000..30000).step(1000).to_a, {:prompt =>"$"}, { class: 'otro-input' } %>
+								<%= f.select :rentaHora, (1000..15000).step(500).to_a, {:prompt =>"$"}, { class: 'otro-input' } %>
 							<img src="http://www.flaticon.com/png/256/8235.png" title="Recuerda que mientras más bajas sean us espectativas de renta,
 más ofertas recibirás" width="15px" height="15px">
 						</div>
@@ -492,13 +492,16 @@ necesitas poner publicidad en tu vehículo" width="15px" height="15px">
 					</td>
 					<td>
 						<div class="form-group">
-							<label for="exp2" class="col-sm-5 contol-label" style="text-align:left;">Donde? </label>
+							<label for="exp2" class="col-sm-5 contol-label" style="text-align:left;">¿Dónde? </label>
 								<%= f.text_area :experiencias, :class=>"form_control otro-input" %>
 						</div>
 					</td>
 				</tr>
 			</table>
-			<%= f.submit 'Guardar y Enviar', :class=>'btn btn-large btn-block btn-default icon-ok-circle'  %>
+			<script>
+			<%= add_gritter("This is a notification just for you!") %>
+			</script>
+			<%= f.submit 'Guardar y Enviar', :class=>'btn btn-large btn-block btn-default icon-ok-circle' %>
 		<% end -%>
 		</div>
 	</div>

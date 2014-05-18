@@ -37,6 +37,14 @@
 <div id="wrapper" class="skepage">
 
 	<div id="header" class="skehead-headernav clearfix" style="border-bottom:0px solid; box-shadow:0px 5px 5px rgba(0,0,0,0.3); position:fixed;">
+		<% if flash[:error] -%>
+		  <p class='error' id="error"><%=h flash[:error] %></p>
+		  <%= javascript_tag "$('#error').fadeOut(15000)" %>
+		<% end -%>
+		<% if flash[:notice] -%>
+		  <p class='notice' id="notice"><%=h flash[:notice] %></p>
+		  <%= javascript_tag "$('#notice').fadeOut(15000)" %>
+		<% end -%>
 		<div class="glow">
 			<div id="skehead">
 				<div class="container">      
@@ -44,7 +52,7 @@
 						<!-- #logo -->
 						<div id="logo" class="span3">
 							<a title="" >
-								<img class="logo1" src="images/logo3.png" alt="" style="width:120; height:40; margin-top:25px;" />
+								<img class="logo1" src="/images/logo3.png" alt="" style="width:120; height:40; margin-top:25px;" />
 							</a>
 						</div>
 						<!-- #logo -->

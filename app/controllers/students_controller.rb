@@ -6,7 +6,10 @@ class StudentsController < ApplicationController
 	def create
 		@student = Student.create(student_params)
 		if @student.save
-			redirect_to welcome_index_path
+			redirect_to welcome_index_path, :notice => "Ya te tenemos en nuestros registros!, te contactaremos luego"
+		else
+			redirect_to welcome_index_path, :error => "Ups! tenemos un problema, intentalo nuevamente."
+			#redirect_to welcome_index_path	
 		end
 	end
 

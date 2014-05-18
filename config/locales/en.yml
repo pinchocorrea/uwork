@@ -33,3 +33,5 @@ activerecord:
 					email:
 						blank: "es requerida"
 						invalid: "Dirección invalida"
+						en:
+						
