@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require_tree .
 //= require chosen-jquery
-//= require gritter
 $(function() {
   return $('.chosen-select').chosen({
     allow_single_deselect: true,
