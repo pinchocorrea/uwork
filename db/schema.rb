@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140421201449) do
+ActiveRecord::Schema.define(version: 20140522213836) do
 
   create_table "autos", force: true do |t|
     t.string   "nombre"
@@ -46,12 +46,20 @@ ActiveRecord::Schema.define(version: 20140421201449) do
   end
 
   create_table "students", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "firstname"
     t.string   "lastname"
     t.string   "secondlastname"
     t.string   "rut"
     t.string   "fechaNac"
+    t.string   "email"
+    t.integer  "cel"
+    t.string   "sexo"
+    t.integer  "hijos"
     t.string   "comunaId"
+    t.string   "empresaCel"
+    t.string   "contratoCel"
     t.string   "colegioId"
     t.string   "universidadId"
     t.string   "carreraId"
@@ -59,30 +67,20 @@ ActiveRecord::Schema.define(version: 20140421201449) do
     t.integer  "duracion"
     t.integer  "fechaEgreso"
     t.string   "nivelIngles"
-    t.string   "dispInicio"
-    t.string   "dispFin"
-    t.string   "dispDiaHra"
-    t.string   "experiencia"
-    t.string   "experiencias"
-    t.integer  "rentaHora"
-    t.string   "sectorId"
-    t.string   "auto"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "email"
-    t.integer  "cel"
-    t.string   "sexo"
-    t.integer  "hijos"
-    t.string   "Idiomas"
-    t.string   "marcaAuto"
-    t.string   "modeloAuto"
-    t.string   "anioAuto"
-    t.string   "empresaCel"
-    t.string   "contratoCel"
     t.string   "nivelAleman"
     t.string   "nivelPortugues"
     t.string   "nivelFrances"
     t.string   "nivelChino"
+    t.string   "OtrosIdiomas"
+    t.integer  "rentaHora"
+    t.string   "sectorId"
+    t.string   "experiencia"
+    t.string   "experiencias"
+    t.string   "auto"
+    t.string   "marcaAuto"
+    t.string   "anioAuto"
+    t.string   "hobbies"
+    t.string   "deportes"
   end
 
   create_table "universidads", force: true do |t|

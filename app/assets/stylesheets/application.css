@@ -14,7 +14,25 @@
  */
  /*flash*/
 .hidden { display: none; }
-
+select{
+	border-radius: 5px;
+}
+.otro-input{
+	-moz-border-radius-bottomleft: 6px;
+	-moz-border-radius-bottomright: 6px;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-topright: 6px;
+	-webkit-border-bottom-left-radius: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+	-webkit-border-top-left-radius: 6px;
+	-webkit-border-top-right-radius: 6px;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	vertical-align:middle;
+	max-width: 250px;
+}
 .alert-error {
 background-color: #f2dede;
 border-color: #eed3d7;

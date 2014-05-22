@@ -1,9 +1,9 @@
 <br/>
-<div class="well" style="width:80%; margin-left:auto; margin-right:auto; margin-top:100px;">
+<div class="well" style="width:950px; margin-left:auto; margin-right:auto; margin-top:100px;">
 	<div class="row" style="margin-left:auto; margin-right:auto; width:100%;">
 		
 		<div class="col-md-12">
-		<script>
+		<!--<script>
 			function validar(){
 				var rut_validar = document.getElementById("student_rut").value;
 				Rut(rut_validar);
@@ -99,23 +99,9 @@
 				document.getElementById("dispField").value = dispField;
 			}
 
-		</script>
+		</script>-->
 		<style>
-		.otro-input{
-			-moz-border-radius-bottomleft: 6px;
-			-moz-border-radius-bottomright: 6px;
-			-moz-border-radius-topleft: 6px;
-			-moz-border-radius-topright: 6px;
-			-webkit-border-bottom-left-radius: 6px;
-			-webkit-border-bottom-right-radius: 6px;
-			-webkit-border-top-left-radius: 6px;
-			-webkit-border-top-right-radius: 6px;
-			border-bottom-left-radius: 6px;
-			border-bottom-right-radius: 6px;
-			border-top-left-radius: 6px;
-			border-top-right-radius: 6px;
-			vertical-align:middle;
-			}
+		
 		</style>
 
 		<%= form_for @student,  html: {name:"form1", role: "form", class:"form-horizontal", style:"width:100%; margin:auto; text-align:left;"} do |f| -%>
@@ -240,8 +226,6 @@ en que se requiere que tengan conocimientos acerca de niños" width="15px" heigh
 							<label for="colegio" class="col-sm-5 contol-label" style="text-align:left;">Colegio: </label>
 								
 								<%= f.select(:colegioId,  Colegio.all.map { |colegio| [colegio.nombre] },  { include_blank: true },  { class: 'chosen-select' } )%>
-								<!--<% colegios_array = Colegio.all.map{|colegio| [colegio.nombre]}%>-->
-								<!--<%#= f.select(:colegioId, options_for_select(colegios_array), {:prompt=>""})%>-->
 
 						</div>
 					</td>
@@ -250,8 +234,6 @@ en que se requiere que tengan conocimientos acerca de niños" width="15px" heigh
 							<style> #student_universidadId{width:150px;}</style>
 							<label for="u" class="col-sm-5 contol-label" style="text-align:left;">Universidad actual: </label>
 							<%= f.select(:universidadId,  Universidad.all.map { |universidad| [universidad.nombre] },  { include_blank: true },  { class: 'chosen-select' } )%>
-							<!--<%# u_array = Universidad.all.map{|u| [u.nombre]}%>
-								<%#= f.select(:universidadId, options_for_select(u_array), {:prompt=>""})%>-->
 						</div>
 					</td>
 				</tr>
@@ -261,8 +243,6 @@ en que se requiere que tengan conocimientos acerca de niños" width="15px" heigh
 							<style> #student_carreraId{width:150px;}</style>
 							<label for="carrera" class="col-sm-5 contol-label" style="text-align:left;">Carrera Actual: </label>
 							<%= f.select(:carreraId,  Carrera.all.map { |carrera| [carrera.nombre] },  { include_blank: true },  { class: 'chosen-select' } )%>
-							<!--<%# carrera_array = Carrera.all.map{|carrera| [carrera.nombre]}%>
-							<%#= f.select(:carreraId, options_for_select(carrera_array), {:prompt=>""})%>-->
 						</div>
 					</td>
 					<td>
@@ -292,7 +272,7 @@ en que se requiere que tengan conocimientos acerca de niños" width="15px" heigh
 				<tr>
 					<td colspan="2">
 						<div class="form-group">
-							<table style="margin-left:15%; margin-bottom:0px;">
+							<table style="margin-left:40px; margin-top:10px; margin-bottom:0px;">
 								<tr>
 									<td style="border:0px solid black; text-align:right;">
 									<%= label_tag(:nivelIngles, "Nivel de Ingles: ") %>
@@ -325,7 +305,13 @@ en que se requiere que tengan conocimientos acerca de niños" width="15px" heigh
 									<%= label_tag(:nivelChino, "Nivel de Chino: ") %>
 									</td>
 									<td style="border:0px solid black; text-align:right;">
-									<%= f.select(:nivelChino, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), { class: 'chosen-select' })%>
+									<%= f.select(:nivelChino, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), { class: 'otro-input' })%>
+									</td>
+									<td style="border:0px solid black; text-align:right;">
+									<%= label_tag(:OtrosIdiomas, "Otro idioma: ") %>
+									</td>
+									<td style="border:0px solid black; text-align:right;">
+									<%= f.text_field :OtrosIdiomas, :class=>"form_control otro-input" %>
 									</td>
 								</tr>
 							</table>
@@ -411,7 +397,7 @@ en que se requiere que tengan conocimientos acerca de niños" width="15px" heigh
 						</div>
 						<p style="text-align:center;">(AM = 7:00 - 13:00hrs | PM = 13:00 - 18:00hrs | Vespertino = 18:00 - 23:00hrs)</p>
 					</td>
-						<%= f.hidden_field :dispDiaHra, :id=>"dispField", :value=>"" %>
+						<%#= f.hidden_field :dispDiaHra, :id=>"dispField", :value=>"" %>
 						<script>
 							var dispField = document.getElementById("dispField").value;
 						</script>-->
@@ -494,6 +480,20 @@ necesitas poner publicidad en tu vehículo" width="15px" height="15px">
 						<div class="form-group">
 							<label for="exp2" class="col-sm-5 contol-label" style="text-align:left;">¿Dónde? </label>
 								<%= f.text_area :experiencias, :class=>"form_control otro-input" %>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="form-group">
+							<label for="hob" class="col-sm-5 contol-label" style="text-align:left;">Describe tus hobbies </label>
+								<%= f.text_area :hobbies, :class=>"form_control otro-input" %>
+						</div>
+					</td>
+					<td>
+						<div class="form-group">
+							<label for="dep" class="col-sm-5 contol-label" style="text-align:left;">Indica que deporte practicas</label>
+								<%= f.text_area :deportes, :class=>"form_control otro-input" %>
 						</div>
 					</td>
 				</tr>
