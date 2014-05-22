@@ -5,11 +5,10 @@ class StudentsController < ApplicationController
 
 	def create
 		@student = Student.create(student_params)
-		if @student.save
+		if @student.save!
 			redirect_to welcome_index_path, :notice => "Ya te tenemos en nuestros registros!, te contactaremos luego"
 		else
 			redirect_to welcome_index_path, :error => "Ups! tenemos un problema, intentalo nuevamente."
-			#redirect_to welcome_index_path	
 		end
 	end
 
@@ -26,7 +25,6 @@ class StudentsController < ApplicationController
 		@students = Student.find(:all)
     	respond_to do |format|
       		format.html
-      		format.csv { render text: Student.to_csv(@students) }
       		format.xls { send_data Student.to_csv(@students, col_sep: "\t") }
     	end
 	end
