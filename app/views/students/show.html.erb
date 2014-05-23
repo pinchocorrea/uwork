@@ -8,6 +8,7 @@
 <br/>
 	<table class="table table-stripped table-condensed" style="text-align:center color:#B7B7B7; overflow:scroll;">
 		<tr style="text-align:center color:white;">
+			<th>ID</th>
 			<th>Nombre</th>
 			<th>Apellido Paterno</th>
 			<th>Apellido Materno</th>
@@ -31,23 +32,24 @@
 			<th>Portugues</th>
 			<th>Frances</th>
 			<th>Chino</th>
-			<th>Inicio Disponibilidad</th>
-			<th>Fin Disponibilidad</th>
-			<th>DiaHora disponible</th>
+			<th>Otros Idiomas</th>
 			<th>Experiencia?</th>
 			<th>Donde?</th>
 			<th>Renta/hora</th>
 			<th>Sector preferente</th>
 			<th>Movilizacion propia</th>
 			<th>Marca</th>
-			<th>Modelo</th>
 			<th>Año</th>
+			<th>Hobbies</th>
+			<th>Deportes</th>
+
 		</tr>
 
 	   
 	<% if !@students.blank? %>
 		<% for item in @students %>
 			<tr>
+				<td><%= item.id %></td>
 				<td><%= item.firstname %></td>
 				<td><%= item.lastname %></td>
 				<td><%= item.secondlastname %> </td>
@@ -59,7 +61,6 @@
 				<td><%= item.contratoCel %></td>
 				<td><%= item.hijos %></td>
 				<td><%= item.fechaNac %></td>
-
 				<td><%= item.comunaId %></td>
 				<td><%= item.colegioId %></td>
 				<td><%= item.universidadId %></td>
@@ -72,17 +73,16 @@
 				<td><%= item.nivelPortugues %></td>
 				<td><%= item.nivelFrances %></td>
 				<td><%= item.nivelChino %></td>
-				<td><%= item.dispInicio %></td>
-				<td><%= item.dispFin %></td>
-				<td><%= item.dispDiaHra %></td>
+				<td><%= item.OtrosIdiomas %></td>
 				<td><%= item.experiencia %></td>
 				<td><%= item.experiencias %></td>
 				<td><%= item.rentaHora %></td>
 				<td><%= item.sectorId %></td>
 				<td><%= item.auto %></td>
 				<td><%= item.marcaAuto %></td>
-				<td><%= item.modeloAuto %></td>
 				<td><%= item.anioAuto %></td>
+				<td><%= item.hobbies %></td>
+				<td><%= item.deportes %></td>
 			</tr>
 		<% end %>
 	<% else %>
