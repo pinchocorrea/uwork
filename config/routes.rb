@@ -5,16 +5,15 @@ Uwork::Application.routes.draw do
   match '/contacto', to:'contacts#new', via:'get'
   get "students/new"
   match '/postula', to:'students#new', via:'get'
-  get "new/create"
   get "welcome/index"
   match '/inicio', to:'welcome#index', via:'get'
   get "welcome/empresas"
   match '/empresas', to:'welcome#empresas', via:'get'
   root :to => 'welcome#index'
 
-
-  resources "contacts", only: [:new, :create]
+  resources :contacts
   resources :students
+  resources :welcome
 
   
 
