@@ -1,5 +1,5 @@
 <br/>
-<div class="well" style="width:950px; margin-left:auto; margin-right:auto; margin-top:100px;">
+<div class="well" style="width:850px; margin-left:auto; margin-right:auto; margin-top:100px;">
 	<div class="row" style="margin-left:auto; margin-right:auto; width:100%;">
 		
 		<div class="col-md-12">
@@ -187,14 +187,14 @@ ofertas de trabajo que te queden más cerca" width="15px" height="15px">
 					<td>
 						<div class="form-group">
 							<label for="cel" class="col-sm-5 contol-label" style="text-align:left;">Celular: </label>
-								<%= f.phone_field :cel,:required => true,:placeholder=>"9 XXXX XXXX", :class=>"form_control otro-input" %>
+								<%= f.phone_field :cel, :required => true,:placeholder=>"9 XXXX XXXX", :maxlength =>"9", :class=>"form_control otro-input" %>
 						</div>
 					</td>
 					<td>
 						<div class="form-group">
 							<label for="Empresa celular" class="col-sm-5 contol-label" style="text-align:left;">Empresa Celular: </label>
 								<%= f.select(:empresaCel, options_for_select([['Claro'],['Entel'],['Movistar'],['Virgin'],['Vtr']]), {:prompt=>""}, { class: 'chosen-select' })%>
-								<%= f.select(:contratoCel, options_for_select([['Plan'],['Prepago']]), {:prompt=>""}, { class: 'otro-input' })%>
+								<%= f.select(:contratoCel, options_for_select([['Plan'],['Prepago']]), {:prompt=>""}, { class: 'otro-input2' })%>
 								<img src="http://www.flaticon.com/png/256/8235.png" title="Esta info es necesaria para clasficar a los candidatos
 para aquellas pegas que es necesario usar el teléfono" width="15px" height="15px">
 						</div>
@@ -486,14 +486,14 @@ necesitas poner publicidad en tu vehículo" width="15px" height="15px">
 				<tr>
 					<td>
 						<div class="form-group">
-							<label for="hob" class="col-sm-5 contol-label" style="text-align:left;">Describe tus hobbies </label>
-								<%= f.text_area :hobbies, :class=>"form_control otro-input" %>
+							<label for="hob" class="col-sm-5 contol-label" style="text-align:left;">Escribe tus hobbies </label>
+								<%= f.text_area :hobbies, :placeholder=>"Fotografía, Programación web, origami, pintura, etc.", :class=>"form_control otro-input" %>
 						</div>
 					</td>
 					<td>
 						<div class="form-group">
-							<label for="dep" class="col-sm-5 contol-label" style="text-align:left;">Indica que deporte practicas</label>
-								<%= f.text_area :deportes, :class=>"form_control otro-input" %>
+							<label for="dep" class="col-sm-5 contol-label" style="text-align:left;">Indica que deporte practicas o te manejas</label>
+								<%= f.text_area :deportes, :placeholder=>"Futbol, ski, hockey, halterofilia, etc", :class=>"form_control otro-input" %>
 						</div>
 					</td>
 				</tr>
