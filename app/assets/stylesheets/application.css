@@ -17,6 +17,29 @@
 select{
 	border-radius: 5px;
 }
+#skenav1 a {
+	color:white;
+	display: block;
+	padding: 0 15px;
+	text-decoration: none;
+}
+#skenav1 a:hover {
+	color:white;
+	background-color: #2B2A2A;
+	display: block;
+	padding: 0 15px;
+	text-decoration: none;
+}
+.navlink{
+	color:white;
+	vertical-align:middle;
+	display:inline-block;
+	font-size:150%;
+	height:101px;
+	line-height: 95px;
+
+}
+
 .otro-input{
 	width:150px;
 	-moz-border-radius-bottomleft: 6px;
