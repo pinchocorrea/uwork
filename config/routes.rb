@@ -1,6 +1,6 @@
 Uwork::Application.routes.draw do
-  get "contacts/newEmpresa"
-  match '/empresas', to:'contacts#newEmpresa', via:'get'
+  get "contacts/form_empresa"
+  match '/form_empresa', to:'contacts#form_empresa', via:'get'
   get "contacts/new"
   match '/contacto', to:'contacts#new', via:'get'
   get "students/new"
@@ -8,6 +8,8 @@ Uwork::Application.routes.draw do
   get "new/create"
   get "welcome/index"
   match '/inicio', to:'welcome#index', via:'get'
+  get "welcome/empresas"
+  match '/empresas', to:'welcome#empresas', via:'get'
   root :to => 'welcome#index'
 
 
