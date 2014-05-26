@@ -40,4 +40,9 @@ class StudentsController < ApplicationController
       		format.xls { send_data Student.to_csv(@students, col_sep: "\t") }
     	end
 	end
+	def destroy
+		@student = Student.find(params[:id])
+		@student.destroy
+		redirect_to students_show_path
+	end
 end

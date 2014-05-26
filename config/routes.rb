@@ -1,16 +1,18 @@
 Uwork::Application.routes.draw do
+  get "students/show"
   get "contacts/form_empresa"
   match '/form_empresa', to:'contacts#form_empresa', via:'get'
   get "contacts/new"
   match '/contacto', to:'contacts#new', via:'get'
   get "students/new"
   match '/postula', to:'students#new', via:'get'
-  get "students/show"
   get "welcome/index"
   match '/inicio', to:'welcome#index', via:'get'
   get "welcome/empresas"
   match '/empresas', to:'welcome#empresas', via:'get'
   root :to => 'welcome#index'
+
+  #DELETE /students/ 'students#destroy'
 
   resources :contacts
   resources :students
