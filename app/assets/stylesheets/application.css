@@ -39,7 +39,12 @@ select{
 	line-height: 95px;
 
 }
-
+.skehead-headernav1{
+	background-color:#424242;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
 .otro-input{
 	width:150px;
 	-moz-border-radius-bottomleft: 6px;
