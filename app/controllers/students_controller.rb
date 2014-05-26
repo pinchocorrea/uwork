@@ -12,10 +12,22 @@ class StudentsController < ApplicationController
 		end
 	end
 
+	def edit
+	    @student = Student.find(params[:id])
+	end
+	def update
+	    @student = Student.find(params[:id])
+
+		if @student.update(student_params)
+			redirect_to students_show_path
+		else
+			render 'edit'
+		end
+	end
+
 	def student_params
 		params.require(:student).permit(:created_at, :updated_at, :firstname, :lastname, :secondlastname, :rut, :fechaNac, :comunaId, :hijos, :colegioId, :universidadId, :carreraId, :fechaIngreso, :duracion, :fechaEgreso, :experiencia, :experiencias, :rentaHora, :sectorId, :auto, :email, :cel, :sexo, :empresaCel, :contratoCel,  :nivelIngles, :nivelAleman, :nivelPortugues, :nivelFrances, :nivelChino, :OtrosIdiomas, :marcaAuto, :anioAuto, :hobbies, :deportes)
 	end
-	#:modeloAuto, , :hobbies, :deportes
 
 	def show
 		@students = Student.find(:all)

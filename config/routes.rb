@@ -5,6 +5,7 @@ Uwork::Application.routes.draw do
   match '/contacto', to:'contacts#new', via:'get'
   get "students/new"
   match '/postula', to:'students#new', via:'get'
+  get "students/show"
   get "welcome/index"
   match '/inicio', to:'welcome#index', via:'get'
   get "welcome/empresas"
