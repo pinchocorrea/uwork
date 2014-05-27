@@ -28,13 +28,13 @@
 					<td>
 						<div class="form-group">
 							<label for="nombre" class="col-sm-5 contol-label" style="text-align:left;">Nombre:</label> 
-								<%= f.text_field :firstname, :placeholder=>"Nombre", :required => true, :class=>"form_control otro-input" %> 
+								<%= f.text_field :firstname, :placeholder=>"Nombre", :required => true, :maxlength =>"250", :class=>"form_control otro-input" %> 
 						</div>
 					</td>
 					<td>
 						<div class="form-group">
 							<label for="ap2" class="col-sm-5 contol-label" style="text-align:left;">Apellido Paterno: </label>
-								<%= f.text_field :lastname, :placeholder=>"Apellido Paterno", :required => true,:class=>"form_control otro-input" %>
+								<%= f.text_field :lastname, :placeholder=>"Apellido Paterno", :required => true, :maxlength =>"250",:class=>"form_control otro-input" %>
 						</div>
 					</td>
 				</tr>
@@ -42,7 +42,7 @@
 					<td>
 						<div class="form-group">
 							<label for="ap3" class="col-sm-5 contol-label" style="text-align:left;">Apellido Materno: </label>
-								<%= f.text_field :secondlastname, :placeholder=>"Apellido Materno", :required => true,:class=>"form_control otro-input" %>
+								<%= f.text_field :secondlastname, :placeholder=>"Apellido Materno", :required => true,:maxlength =>"250",:class=>"form_control otro-input" %>
 						</div>
 					</td>
 					<td>
@@ -57,7 +57,7 @@
 					<td>
 						<div class="form-group">
 							<label for="rut" class="col-sm-5 contol-label" style="text-align:left;">Rut: </label>
-								<%= f.text_field :rut, :onchange=>"validar()",:placeholder=>"12345678-9",:required => true, :class=>"form_control otro-input" %> 
+								<%= f.text_field :rut, :onchange=>"validar()",:placeholder=>"12345678-9",:maxlength =>"12",:required => true, :class=>"form_control otro-input" %> 
 						</div>
 						
 					</td>
@@ -73,7 +73,7 @@
 					<td>
 						<div class="form-group">
 							<label for="email" class="col-sm-5 contol-label" style="text-align:left;">E-Mail: </label>
-								<%= f.email_field :email, :required => true, :placeholder=>"ejemplo@sitio.cl", :class=>"form_control otro-input" %>
+								<%= f.email_field :email, :required => true, :placeholder=>"ejemplo@sitio.cl",:maxlength =>"250", :class=>"form_control otro-input" %>
 						</div>
 					</td>
 					<td>
@@ -162,7 +162,7 @@ en que se requiere que tengan conocimientos acerca de niños" width="15px" heigh
 					<td>
 						<div class="form-group">
 							<style> #student_duracion{width:150px;}</style>
-							<label for="durac" class="col-sm-5 contol-label" style="text-align:left;">Duracion: </label>
+							<label for="durac" class="col-sm-5 contol-label" style="text-align:left;">Duración: </label>
 							<%= f.select :duracion, (1..10).to_a, {:prompt => ""}, { class: 'chosen-select' } %>
 						</div>
 					</td>
@@ -248,7 +248,7 @@ más ofertas recibirás" width="15px" height="15px">
 					<td>
 						<div class="form-group">
 							<label for="rubro" class="col-sm-5 contol-label" style="text-align:left;">Trabajos preferentes: </label>
-								<%= f.text_field :sectorId, :class=>"form_control otro-input" %>
+								<%= f.text_field :sectorId, :maxlength =>"1000", :class=>"form_control otro-input" %>
 						</div>
 					</td>
 				</tr>
@@ -295,7 +295,7 @@ necesitas poner publicidad en tu vehículo" width="15px" height="15px">
 					<td>
 						<div class="form-group">
 							<label for="exp2" class="col-sm-5 contol-label" style="text-align:left;">¿Dónde? </label>
-								<%= f.text_area :experiencias, :class=>"form_control otro-input" %>
+								<%= f.text_area :experiencias, :maxlength =>"1000", :class=>"form_control otro-input" %>
 						</div>
 					</td>
 				</tr>
@@ -303,13 +303,13 @@ necesitas poner publicidad en tu vehículo" width="15px" height="15px">
 					<td>
 						<div class="form-group">
 							<label for="hob" class="col-sm-5 contol-label" style="text-align:left;">Escribe tus hobbies </label>
-								<%= f.text_area :hobbies, :placeholder=>"Fotografía, Programación web, origami, pintura, etc.", :class=>"form_control otro-input" %>
+								<%= f.text_area :hobbies, :placeholder=>"Fotografía, Programación web, origami, pintura, etc.",:maxlength =>"1000", :class=>"form_control otro-input" %>
 						</div>
 					</td>
 					<td>
 						<div class="form-group">
 							<label for="dep" class="col-sm-5 contol-label" style="text-align:left;">Indica que deporte practicas o te manejas</label>
-								<%= f.text_area :deportes, :placeholder=>"Futbol, ski, hockey, halterofilia, etc", :class=>"form_control otro-input" %>
+								<%= f.text_area :deportes, :placeholder=>"Futbol, ski, hockey, halterofilia, etc", :maxlength =>"1000", :class=>"form_control otro-input" %>
 						</div>
 					</td>
 				</tr>

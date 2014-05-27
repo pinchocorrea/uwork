@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140526154913) do
+ActiveRecord::Schema.define(version: 20140527142438) do
 
   create_table "autos", force: true do |t|
     t.string   "nombre"
@@ -80,14 +80,14 @@ ActiveRecord::Schema.define(version: 20140526154913) do
     t.string   "nivelChino"
     t.string   "OtrosIdiomas"
     t.integer  "rentaHora"
-    t.string   "sectorId"
+    t.text     "sectorId",       limit: 255
     t.string   "experiencia"
-    t.string   "experiencias"
+    t.text     "experiencias",   limit: 255
     t.string   "auto"
     t.string   "marcaAuto"
     t.string   "anioAuto"
-    t.string   "hobbies"
-    t.string   "deportes"
+    t.text     "hobbies",        limit: 255
+    t.text     "deportes",       limit: 255
   end
 
   create_table "trabajo_preferentes", force: true do |t|

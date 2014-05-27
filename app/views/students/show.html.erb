@@ -53,7 +53,8 @@
 				<tr>
 					<td>
 						<%= link_to 'Editar', edit_student_path(item) %>
-						<%= link_to 'Borrar', student_path(item), method: :delete, data: { confirm: 'Seguro que quieres eliminar esta entrada?' } %>
+						<%= link_to 'Borrar', student_path(item), method: :delete, data: { confirm: '¿Seguro que quieres eliminar esta entrada? 
+							Luego de esta acción no hay vuelta atrás' } %>
 					</td>
 					<td><%= item.id %></td>
 					<td><%= item.firstname %></td>
