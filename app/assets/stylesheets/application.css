@@ -44,10 +44,16 @@ select{
 	color:white;
 	vertical-align:middle;
 	display:inline-block;
-	font-size:150%;
+	font-size:130%;
 	height:101px;
 	line-height: 95px;
 
+}
+#logo1{		
+	width: 300px;
+	height: 150px;
+	margin-top: 14px;
+	position: absolute;
 }
 ul.menu1 li{
 	float: left;
@@ -69,6 +75,12 @@ ul.menu1 li{
 	left: 0;
 	top: 0;
 	width: 100%;
+}
+#skenav1{
+	float:right;
+}
+#top-nav-menu1{
+	float:right;
 }
 a#backtop{
 	background-color: #3890FF;

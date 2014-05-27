@@ -113,7 +113,7 @@ a,.ske-footer-container ul li:hover:before,.ske-footer-container ul li:hover > a
 	<div style="width:1000px; margin-left:auto; margin-right:auto;">
     <div id="wrapper" class="skepage">
 
-      <div id="header" class="skehead-headernav1 clearfix1" style="border-bottom:0px solid; box-shadow:0px 5px 5px rgba(0,0,0,0.3); position:absolute;">
+      <div id="header" class="skehead-headernav1 clearfix1" style="border-bottom:0px solid; position:absolute;">
         <% if flash[:error] -%>
           <p class='error' id="error"><%=h flash[:error] %></p>
           <%= javascript_tag "$('#error').fadeOut(15000)" %>
@@ -127,17 +127,17 @@ a,.ske-footer-container ul li:hover:before,.ske-footer-container ul li:hover > a
             <div class="container1">      
               <div class="row-fluid clearfix1">  
                 <!-- #logo -->
-                <div id="logo" class="span3">
+                <div>
                   <a title="UWork" href="inicio" >
-                    <img class="logo1" src="/images/logo.jpg" alt="" style="width:120px; height:45px; margin-top:25px;" />
+                    <img id="logo1" src="/images/logouwork.png"/>
                   </a>
                 </div>
                 <!-- #logo -->
                 
                 <!-- navigation-->
-                <div class="top-nav-menu1 span9">
+                <div id="top-nav-menu1 span9">
                   <div class="ske-menu1" id="skenav1">
-                    <ul id="menu-main1" class="menu">
+                    <ul id="menu-main1" class="menu1">
                       <li class="page_item1">
                         <%= link_to "Inicio", inicio_path, class: "navlink" %>
                         <!--<a onclick="showInicio()" class="navlink">Inicio</a>-->
