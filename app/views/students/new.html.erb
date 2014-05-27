@@ -279,8 +279,6 @@ o poner publicidad en tu vehículo" width="15px" height="15px">
 							<label for="auto" class="col-sm-5 contol-label" style="text-align:left;">Si marcaste auto, ¿Cuál tienes?: </label>
 								
 								<%= f.select(:marcaAuto,  Auto.all.map { |auto| [auto.nombre] },  { include_blank: true },  { class: 'chosen-select1' } )%>
-								<!--<%# auto_array = Auto.all.map{|auto| [auto.nombre]}%>
-								<%#= f.select(:marcaAuto, options_for_select(auto_array), {:prompt=>"Marca/modelo"})%>-->
 								<%= f.select :anioAuto, (Time.now.year-50..Time.now.year).to_a, {:prompt =>"Año"}, { class: 'otro-input' } %>
 								<img src="http://www.flaticon.com/png/256/8235.png" title="Esta info es necesaria para ofrecerte aquellos trabajos en que
 necesitas poner publicidad en tu vehículo" width="15px" height="15px">

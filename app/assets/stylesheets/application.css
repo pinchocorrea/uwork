@@ -13,9 +13,19 @@
  *= require chosen
  */
  /*flash*/
+.pagecontainer{
+	width:900px;
+}
 .hidden { display: none; }
 select{
 	border-radius: 5px;
+}
+.container1{
+	width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 #skenav1 a {
 	color:white;
@@ -39,11 +49,33 @@ select{
 	line-height: 95px;
 
 }
+ul.menu1 li{
+	float: left;
+	position: relative;
+	margin-left: 0px;
+	list-style: none outside none;
+}
+.flexslider1{
+	position:relative;
+	width:1000px;
+}
+.default-slider-image1{
+	position:relative;
+	width:1000px;
+}
 .skehead-headernav1{
-	background-color:#424242;
+	min-width:1000px;
+	background-color:#3B3B3B;
 	left: 0;
 	top: 0;
 	width: 100%;
+}
+a#backtop{
+	background-color: #3890FF;
+}
+.skt-section1{
+	margin-top: 20px;
+	width:1000px;
 }
 .otro-input{
 	width:150px;
