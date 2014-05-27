@@ -1,3 +1,8 @@
+<script>
+	$(document).ready( function() {
+	    
+	});
+</script>
 <title>Postula - UWork</title>
 <br/>
 <div class="well" style="width:850px; margin-left:auto; margin-right:auto; margin-top:100px;">
@@ -57,7 +62,7 @@
 					<td>
 						<div class="form-group">
 							<label for="rut" class="col-sm-5 contol-label" style="text-align:left;">Rut: </label>
-								<%= f.text_field :rut, :onchange=>"validar()",:placeholder=>"12345678-9",:maxlength =>"12",:required => true, :class=>"form_control otro-input" %> 
+								<%= f.text_field :rut, :onchange=>"Rut(this.value)",:placeholder=>"12345678-9",:maxlength =>"12",:required => true, :class=>"form_control otro-input" %> 
 						</div>
 						
 					</td>
