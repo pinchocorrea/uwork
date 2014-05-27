@@ -27,6 +27,9 @@ select{
     padding-left: 0px;
     padding-right: 0px;
 }
+#header1{
+	height:80px;
+}
 #skenav1 a {
 	color:white;
 	display: block;
@@ -45,15 +48,16 @@ select{
 	vertical-align:middle;
 	display:inline-block;
 	font-size:130%;
-	height:101px;
+	height:80px;
 	line-height: 95px;
 
 }
 #logo1{		
-	width: 300px;
-	height: 150px;
-	margin-top: 14px;
+	width: 221px;
+	height: 118px;
+	margin-top: 25px;
 	position: absolute;
+	z-index: 100;
 }
 ul.menu1 li{
 	float: left;
@@ -75,6 +79,7 @@ ul.menu1 li{
 	left: 0;
 	top: 0;
 	width: 100%;
+	z-index: 2;
 }
 #skenav1{
 	float:right;
