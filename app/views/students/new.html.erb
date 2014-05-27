@@ -103,7 +103,7 @@ ofertas de trabajo que te queden más cerca" width="15px" height="15px">
 					<td>
 						<div class="form-group">
 							<label for="Empresa celular" class="col-sm-5 contol-label" style="text-align:left;">Empresa Celular: </label>
-								<%= f.select(:empresaCel, options_for_select([['Claro'],['Entel'],['Movistar'],['Virgin'],['Vtr']]), {:prompt=>""}, { class: 'chosen-select' })%>
+								<%= f.select(:empresaCel, options_for_select([['Claro'],['Entel'],['Movistar'],['Virgin'],['Vtr']]), {:prompt=>""}, { class: 'chosen-select1' })%>
 								<%= f.select(:contratoCel, options_for_select([['Plan'],['Prepago']]), {:prompt=>""}, { class: 'otro-input2' })%>
 								<img src="http://www.flaticon.com/png/256/8235.png" title="Esta info es necesaria para clasficar a los candidatos
 para aquellas pegas que es necesario usar el teléfono" width="15px" height="15px">
@@ -278,7 +278,7 @@ o poner publicidad en tu vehículo" width="15px" height="15px">
 								
 							<label for="auto" class="col-sm-5 contol-label" style="text-align:left;">Si marcaste auto, ¿Cuál tienes?: </label>
 								
-								<%= f.select(:marcaAuto,  Auto.all.map { |auto| [auto.nombre] },  { include_blank: true },  { class: 'chosen-select' } )%>
+								<%= f.select(:marcaAuto,  Auto.all.map { |auto| [auto.nombre] },  { include_blank: true },  { class: 'chosen-select1' } )%>
 								<!--<%# auto_array = Auto.all.map{|auto| [auto.nombre]}%>
 								<%#= f.select(:marcaAuto, options_for_select(auto_array), {:prompt=>"Marca/modelo"})%>-->
 								<%= f.select :anioAuto, (Time.now.year-50..Time.now.year).to_a, {:prompt =>"Año"}, { class: 'otro-input' } %>
