@@ -28,6 +28,7 @@ GEM
     addressable (2.3.6)
     arel (4.0.2)
     atomic (1.1.16)
+    bcrypt (3.1.7-x86-mingw32)
     builder (3.1.4)
     chosen-rails (1.1.0)
       coffee-rails (>= 3.2)
@@ -53,6 +54,12 @@ GEM
     compass-rails (1.1.7)
       compass (>= 0.12.2)
       sprockets (<= 2.11.0)
+    devise (3.2.4)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     erubis (2.7.0)
     excon (0.33.0)
     execjs (2.0.2)
@@ -86,6 +93,7 @@ GEM
     minitest (4.7.5)
     multi_json (1.9.2)
     netrc (0.7.7)
+    orm_adapter (0.5.0)
     paperclip (3.1.4)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
@@ -156,6 +164,8 @@ GEM
     uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    warden (1.2.3)
+      rack (>= 1.0)
 
 PLATFORMS
   x86-mingw32
@@ -163,6 +173,7 @@ PLATFORMS
 DEPENDENCIES
   chosen-rails
   coffee-rails (~> 4.0.0)
+  devise
   gem_bench
   heroku
   jbuilder (~> 1.2)
