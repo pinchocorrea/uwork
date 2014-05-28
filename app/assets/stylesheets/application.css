@@ -149,6 +149,22 @@ text-align: left;
 	color: lightblue;
 	font-size: 25px;
 }
+.alert{
+	z-index: 100;
+	line-height: 1.5em;
+	height: 7em;
+	width: 22em;
+	padding: 2em;
+	text-align: center;
+	vertical-align: middle;
+	position: fixed;
+	top: 25%;
+	left: 30%;
+	background: #303030;
+	font-weight: 300;
+	color: white;
+	font-size: 25px;
+}
 .error{
 	z-index: 100;
 	line-height: 1.5em;

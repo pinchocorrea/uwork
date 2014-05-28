@@ -1,4 +1,5 @@
 Uwork::Application.routes.draw do
+  devise_for :users
   get "students/show"
   get "contacts/form_empresa"
   match '/form_empresa', to:'contacts#form_empresa', via:'get'

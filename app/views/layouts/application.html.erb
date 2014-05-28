@@ -122,6 +122,10 @@ a,.ske-footer-container ul li:hover:before,.ske-footer-container ul li:hover > a
           <p class='notice' id="notice"><%=h flash[:notice] %></p>
           <%= javascript_tag "$('#notice').fadeOut(15000)" %>
         <% end -%>
+        <% if flash[:alert] -%>
+          <p class='alert' id="alert"><%=h flash[:alert] %></p>
+          <%= javascript_tag "$('#alert').fadeOut(15000)" %>
+        <% end -%>
         <div class="glow1">
           <div id="skehead1">
             <div class="container1">      
