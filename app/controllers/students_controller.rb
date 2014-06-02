@@ -23,10 +23,12 @@ class StudentsController < ApplicationController
 	    @student = Student.find(params[:id])
 
 		if @student.update(student_params)
-			redirect_to postula_path
+			redirect_to :back
 		else
 			render 'edit'
 		end
+	rescue ActionController::RedirectBackError
+  			redirect_to root_path
 	end
 	def student_params
 		params.require(:student).permit(:email, :created_at, :updated_at, :firstname, :lastname, :secondlastname, :rut,:sexo,:fechaNac,:comunaId, :hijos, :colegioId, :universidadId, :carreraId, :fechaIngreso, :duracion, :fechaEgreso, :experiencia, :experiencias, :rentaHora, :sectorId, :auto, :cel, :empresaCel, :contratoCel,  :nivelIngles, :nivelAleman, :nivelPortugues, :nivelFrances, :nivelChino, :OtrosIdiomas, :marcaAuto, :anioAuto, :hobbies, :deportes)
