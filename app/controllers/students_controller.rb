@@ -23,7 +23,7 @@ class StudentsController < ApplicationController
 	    @student = Student.find(params[:id])
 
 		if @student.update(student_params)
-			redirect_to students_show_path
+			redirect_to postula_path
 		else
 			render 'edit'
 		end
