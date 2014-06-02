@@ -42,7 +42,7 @@ class StudentsController < ApplicationController
       		format.html
       		format.xls { send_data Student.to_csv(@students, col_sep: "\t") }
     	end
-	end
+	end	
 	def destroy
 		@student = Student.find(params[:id])
 		@student.destroy
