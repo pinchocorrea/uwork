@@ -48,10 +48,5 @@ class StudentsController < ApplicationController
 		@student.destroy
 		redirect_to students_show_path
 	end
-	def self.find_for_facebook_oauth(auth)
-	  where(auth.slice(:provider, :uid)).first_or_create do |student|
-	    student.firstname = auth.info.name   # assuming the user model has a name
-	    #user.image = auth.info.image # assuming the user model has an image
-	  end
-	end
+	
 end
