@@ -19,19 +19,59 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 en:
-	date:
-		formats:
-			default: "%d-%m-%Y"
-activerecord:
-	attributes:
-		student:
-			email: "E-mail address"
-	errors:
-		models:
-			student:
-				attributes:
-					email:
-						blank: "es requerida"
-						invalid: "Dirección invalida"
-						en:
-						
+  activerecord:
+      errors:
+        models:
+          user:
+            attributes:
+              email:
+                blank: "Por favor especifique un email"
+                taken: "Por favor especifique un email diferente, este ya está en uso"
+                invalid: "Por favor especifique un email válido"
+              password:
+                blank: "Por favor especifique una clave"
+                confirmation: "Las claves no coinciden"
+                too_short: "La clave es muy corta, debe tener al menos 8 caracteres"
+              password_confirmation:
+                blank: "Por favor repita su clave en el cuadro respectivo"
+  errors:
+    messages:
+      not_found: 'no encontrado'
+      already_confirmed: 'ya ha sido confirmada'
+      not_locked: 'no está bloqueada'
+ 
+  devise:
+    failure:
+      unauthenticated: 'Necesitas acceder a tu cuenta o registrarte antes de continuar.'
+      unconfirmed: 'Necesitas confirmar tu cuenta antes de continuar.'
+      locked: 'Tu cuenta esta bloqueada.'
+      invalid: 'Contraseña o Email incorrecto.'
+      invalid_token: 'Token de autenticación incorrecto.'
+      timeout: 'Tu sesión ha expirado, por favor accede de nuevo para continuar.'
+      inactive: 'Tu cuenta no ha sido activada.'
+    sessions:
+      signed_in: 'Has ingresado correctamente.'
+      signed_out: 'Has salido correctamente.'
+    passwords:
+      send_instructions: 'Recibirás un email con instrucciones para cambiar tu contraseña en poco minutos.'
+      updated: 'Tu contraseña ha sido modificada. Ya has accedido a tu cuenta.'
+    confirmations:
+      send_instructions: 'Recibirás un email con instrucciones para confirmar tu cuenta en poco minutos.'
+      confirmed: 'Tu cuenta ha sido confirmada. Ya has accedido a tu cuenta.'
+    registrations:
+      signed_up: 'Te has registrado correctamente. Ahora accede a la pestaña "Postula!" para completar tus datos.'
+      updated: 'Has actualizado tu cuenta correctamente.'
+      destroyed: 'Adiós! Tu cuenta ha sido cancelada. Esperamos verte pronto.'
+    unlocks:
+      send_instructions: 'Recibirás un email con instrucciones para desbloquear tu cuenta en pocos minutos.'
+      unlocked: 'Tu cuenta ha sido desbloqueada. Ya has accedido a tu cuenta.'
+    oauth_callbacks:
+      success: 'Has sido autorizado satisfactoriamente de la cuenta %{kind}.'
+      failure: 'No has sido autorizado en la cuenta %{kind} porque "%{reason}".'
+    mailer:
+      confirmation_instructions:
+        subject: 'Instrucciones de confirmación'
+      reset_password_instructions:
+        subject: 'Instrucciones para cambiar tu contraseña'
+      unlock_instructions:
+        subject: 'Instrucciones para desbloquear tu cuenta'

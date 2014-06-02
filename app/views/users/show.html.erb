@@ -1,0 +1,60 @@
+<div class="pagecontainer1">
+		<% if user_signed_in? %>
+			<div style="float:right;">Signed in as <%= current_user.email %>. No eres tú?
+				<%= link_to "Cerrar sesión", destroy_user_session_path, :method=> :delete %>
+			</div>
+		<h1>Usuarios Ingresados</h1>
+		<div style="max-height:500px;overflow:scroll;">
+				<table class="table table-stripped table-condensed" style="text-align:center color:#B7B7B7; overflow:scroll;">
+					<tr style="text-align:center color:white;">
+						<th>links</th>
+						<th>ID</th>
+						<th>Email</th>
+						<th>Reset password sent at</th>
+						<th>Sign in count</th>
+						<th>Current sign in at</th>
+						<th>Current sign in IP</th>
+						<th>Last sign in at</th>
+						<th>last sign in IP</th>
+						<th>Created at</th>
+						<th>Updated at</th>
+						<th>Type</th>
+					</tr>
+
+				<% if !@users.blank? %>
+					<% for item in @users %>
+						<tr>
+							<td>
+								<%#= link_to 'Editar', edit_user_path(item) %>
+								<%= link_to 'Borrar', user_path(item), method: :delete, data: { confirm: '¿Seguro que quieres eliminar esta entrada? 
+									Luego de esta acción no hay vuelta atrás' } %>
+								<%= link_to "Editar", edit_user_registration_path(item) %>
+							</td>
+							<td><%= item.id %></td>
+							<td><%= item.email %></td>
+							<td><%= item.reset_password_sent_at %></td>
+							<td><%= item.sign_in_count %></td>
+							<td><%= item.current_sign_in_at %> </td>
+							<td><%= item.current_sign_in_ip %></td>
+							<td><%= item.last_sign_in_at %> </td>
+							<td><%= item.last_sign_in_ip %><br/>
+							<td><%= item.created_at %><br/>
+							<td><%= item.updated_at %></td>
+							<td><%= item.type %></td>
+						</tr>
+					<% end %>
+				<% else %>
+				<% end %>
+			</table>
+		</div>
+	<% else %>
+		<h3> Debes iniciar sesión para continuar</h3>
+		<h5>Si ya tienes una cuenta, haz click 
+		<%= link_to "acá", new_user_session_path %> ó
+		<%= link_to "crea una cuenta", new_user_registration_path %>
+		</h5>
+	<% end %>
+	<% flash.each do |name, msg| %>
+		<%= content_tag :div, msg, :id => "flash_#{name}" %>
+	<%end%>
+</div>

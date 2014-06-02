@@ -1,0 +1,334 @@
+<%= form_for @student1, :url => {:action => 'update', :id => @student1.id}, method: :patch do |f| %>
+  <% if @student.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@student.errors.count, "error") %> prohibited
+      this article from being saved:</h2>
+    <ul>
+    <% @student.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <table style="width:100%; margin-left:auto; margin-left:auto; vertical-align:middle;">
+		<!--<tr>
+			<td colspan="2">
+				<br/>
+				<div class="form-group1">
+					<label for="sesion" class="col-sm-5 contol-label1" style="text-align:left; font-size:150%; margin-left:1%;">Datos de Sesión </label>
+						
+				</div>
+			</td>
+		</tr>-->
+
+		
+		<tr>
+			<td colspan="2">
+				<br/>
+				<div class="form-group1">
+					<label for="educacion" class="col-sm-5 contol-label1" style="text-align:left; font-size:150%; margin-left:1%;">Informacion Personal </label>
+						
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="form-group1">
+					<label for="nombre" class="col-sm-5 contol-label1" style="text-align:left;">Nombre:</label> 
+						<%= f.text_field :firstname, :placeholder=>"Nombre", :required => true, :maxlength =>"250", :class=>"form_control otro-input" %> 
+				</div>
+			</td>
+			<td>
+				<div class="form-group1">
+					<label for="ap2" class="col-sm-5 contol-label1" style="text-align:left;">Apellido Paterno: </label>
+						<%= f.text_field :lastname, :placeholder=>"Apellido Paterno", :required => true, :maxlength =>"250",:class=>"form_control otro-input" %>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="form-group1">
+					<label for="ap3" class="col-sm-5 contol-label1" style="text-align:left;">Apellido Materno: </label>
+						<%= f.text_field :secondlastname, :placeholder=>"Apellido Materno", :required => true,:maxlength =>"250",:class=>"form_control otro-input" %>
+				</div>
+			</td>
+			<td>
+				<div class="form-group1">
+					<style> #student_sexo{width:150px;}</style>
+					<label for="sexo" class="col-sm-5 contol-label1" style="text-align:left;">Género: </label>
+						<%= f.select(:sexo, options_for_select([['Masculino'],['Femenino'],['Otro']]),{:prompt=>""}, { class: 'chosen-select' })%>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="form-group1">
+					<label for="rut" class="col-sm-5 contol-label1" style="text-align:left;">Rut: </label>
+						<%= f.text_field :rut, :onchange=>"Rut(this.value)",:placeholder=>"12345678-9",:maxlength =>"12",:required => true, :class=>"form_control otro-input" %> 
+				</div>
+				
+			</td>
+			<td>
+				<div class="form-group1">
+					<style> #student_fechaNac{width:150px;}</style>
+					<label for="fechaNac" class="col-sm-5 contol-label1" style="text-align:left;">Año nacimiento: </label>
+					<%= f.select :fechaNac, (Time.now.year-100..Time.now.year).to_a, {:prompt => ""},  { class: 'chosen-select' } %>
+				</div>
+			</td> 
+		</tr>
+		<tr>
+			<td>
+				<div class="form-group1">
+					<label for="cel" class="col-sm-5 contol-label1" style="text-align:left;">Celular: </label>
+						<%= f.phone_field :cel, :required => true,:placeholder=>"9 XXXX XXXX", :maxlength =>"9", :class=>"form_control otro-input" %>
+				</div>
+			</td>
+			<td>
+				<div class="form-group1">
+					<label for="Empresa celular" class="col-sm-5 contol-label1" style="text-align:left;">Empresa Celular: </label>
+						<%= f.select(:empresaCel, options_for_select([['Claro'],['Entel'],['Movistar'],['Virgin'],['Vtr']]), {:prompt=>""}, { class: 'chosen-select1' })%>
+						<%= f.select(:contratoCel, options_for_select([['Plan'],['Prepago']]), {:prompt=>""}, { class: 'otro-input2' })%>
+						<img src="http://www.flaticon.com/png/256/8235.png" title="Esta info es necesaria para clasficar a los candidatos
+	para aquellas pegas que es necesario usar el teléfono" width="15px" height="15px">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="form-group1">
+					<label for="Hijos" class="col-sm-5 contol-label1" style="text-align:left;">Cantidad de Hijos: </label>
+					<%= f.select :hijos, (0..10).to_a, {:prompt => ""}, { class: 'chosen-select' } %>
+					<img src="http://www.flaticon.com/png/256/8235.png" title="Esta info es necesaria para seleccionar candidatos en ofertas laborales
+	en que se requiere que tengan conocimientos acerca de niños" width="15px" height="15px">
+				</div>
+			</td>
+			<td>
+				<div class="form-group1">
+					<style> #student_comunaId{width:150px;}</style>
+					<label for="comuna" class="col-sm-5 contol-label1" style="text-align:left;">Comuna donde vives: </label>
+						<% comunas_array = Comuna.all.map{|comuna| [comuna.nombre]}%>
+						<!--<%#= f.select(:comunaId, options_for_select(comunas_array), {:prompt=>""})%>-->
+						<%= f.select(:comunaId,  Comuna.all.map { |comuna| [comuna.nombre] },  { include_blank: true },  { class: 'chosen-select' } )%>
+						<img src="http://www.flaticon.com/png/256/8235.png" title="Tu comuna nos interesa para priorizarte en las
+	ofertas de trabajo que te queden más cerca" width="15px" height="15px">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="form-group1" style="">
+					<label for="mail" class="col-sm-5 contol-label1">Email:</label> 
+						<%= f.text_field :email, autofocus: true, :required => true,  :unique => true, :maxlength =>"250",:class=>"otro-input" %>
+					<!--<label for="cn1" class="contol-label1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clave: </label>
+						<%#= f.password_field :password, autocomplete: "off", :required => true, :maxlength =>"250",:class=>"form_control otro-input" %>
+					<label for="cn2" class="contol-label1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Confirma Clave: </label>
+						<%#= f.password_field :password_confirmation, autocomplete: "off", :required => true, :maxlength =>"250",:class=>"form_control otro-input" %>-->
+				</div>
+			</td>
+			<td>
+				<div class="form-group1" style="">
+				</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2">
+				<br/>
+				<div class="form-group1">
+					<label for="educacion" class="col-sm-5 contol-label1" style="text-align:left; font-size:150%; margin-left:1%;">Educación </label>
+						
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="form-group1">
+					<style> #student_colegioId{width:150px;}</style>
+					<label for="colegio" class="col-sm-5 contol-label1" style="text-align:left;">Colegio: </label>
+						
+						<%= f.select(:colegioId,  Colegio.all.map { |colegio| [colegio.nombre] },  { include_blank: true },  { class: 'chosen-select' } )%>
+
+				</div>
+			</td>
+			<td>
+				<div class="form-group1">
+					<style> #student_universidadId{width:150px;}</style>
+					<label for="u" class="col-sm-5 contol-label1" style="text-align:left;">Universidad actual: </label>
+					<%= f.select(:universidadId,  Universidad.all.map { |universidad| [universidad.nombre] },  { include_blank: true },  { class: 'chosen-select' } )%>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="form-group1">
+					<style> #student_carreraId{width:150px;}</style>
+					<label for="carrera" class="col-sm-5 contol-label1" style="text-align:left;">Carrera Actual: </label>
+					<%= f.select(:carreraId,  Carrera.all.map { |carrera| [carrera.nombre] },  { include_blank: true },  { class: 'chosen-select' } )%>
+				</div>
+			</td>
+			<td>
+				<div class="form-group1">
+					<style> #student_fechaIngreso{width:150px;}</style>
+					<label for="anio1" class="col-sm-5 contol-label1" style="text-align:left;">Año Ingreso: </label>
+					<%= f.select :fechaIngreso, (Time.now.year-10..Time.now.year).to_a, {:prompt => ""}, { class: 'chosen-select' } %>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="form-group1">
+					<style> #student_duracion{width:150px;}</style>
+					<label for="durac" class="col-sm-5 contol-label1" style="text-align:left;">Duración: </label>
+					<%= f.select :duracion, (1..10).to_a, {:prompt => ""}, { class: 'chosen-select' } %>
+				</div>
+			</td>
+			<td>
+				<div class="form-group1">
+					<style> #student_fechaEgreso{width:150px;}</style>
+					<label for="anio2" class="col-sm-5 contol-label1" style="text-align:left;">Fecha Egreso (esperado): </label>
+					<%= f.select :fechaEgreso, (Time.now.year..Time.now.year+10).to_a, {:prompt => ""}, { class: 'chosen-select' } %>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<div class="form-group1">
+					<table style="margin-left:40px; margin-top:10px; margin-bottom:0px;">
+						<tr>
+							<td style="border:0px solid black; text-align:right;">
+							<%= label_tag(:nivelIngles, "Nivel de Ingles: ",class: 'contol-label1') %>
+							</td>
+							<td style="border:0px solid black; text-align:right;">
+							<%= f.select(:nivelIngles, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), 
+							{ class: 'otro-input' } )%>
+							</td>
+							<td style="border:0px solid black; text-align:right;">
+							<%= label_tag(:nivelAleman, "Nivel de Aleman: ",class: 'contol-label1') %>
+							</td>
+							<td style="border:0px solid black; text-align:right;">
+							<%= f.select(:nivelAleman, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), { class: 'otro-input' })%>
+							</td>
+							<td style="border:0px solid black; text-align:right;">
+							<%= label_tag(:nivelFrances, "Nivel de Frances: ",class: 'contol-label1') %>
+							</td>
+							<td style="border:0px solid black; text-align:right;">
+							<%= f.select(:nivelFrances, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), { class: 'otro-input' })%>
+							</td>
+						</tr>
+						<tr>
+							<td style="border:0px solid black; text-align:right;">
+							<%= label_tag(:nivelPortugues, "Nivel de Portugues: ",class: 'contol-label1') %>
+							</td>
+							<td style="border:0px solid black; text-align:right;">
+							<%= f.select(:nivelPortugues, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), { class: 'otro-input' })%>
+							</td>
+							<td style="border:0px solid black; text-align:right;">
+							<%= label_tag(:nivelChino, "Nivel de Chino: ",class: 'contol-label1') %>
+							</td>
+							<td style="border:0px solid black; text-align:right;">
+							<%= f.select(:nivelChino, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), { class: 'otro-input' })%>
+							</td>
+							<td style="border:0px solid black; text-align:right;">
+							<%= label_tag(:OtrosIdiomas, "Otro idioma: ",class: 'contol-label1') %>
+							</td>
+							<td style="border:0px solid black; text-align:right;">
+							<%= f.text_field :OtrosIdiomas, :class=>"form_control otro-input" %>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<div class="form-group1">
+					<br/>
+					<label for="educacion" class="col-sm-6 contol-label1" style="text-align:left; font-size:150%; margin-left:1%;">Experiencia, preferencias y otros</label>
+				</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<div class="form-group1">
+					<label for="renta" class="col-sm-6 contol-label1" style="text-align:left;">Expectativas de renta por hora: </label>
+					<style>
+					#student_rentaHora{
+						width:150px;
+					}</style>
+						<%= f.select :rentaHora, (1000..15000).step(500).to_a, {:prompt =>"$"}, { class: 'otro-input' } %>
+					<img src="http://www.flaticon.com/png/256/8235.png" title="Recuerda que mientras más bajas sean us espectativas de renta,
+	más ofertas recibirás" width="15px" height="15px">
+				</div>
+			</td>
+			<td>
+				<div class="form-group1">
+					<label for="rubro" class="col-sm-6 contol-label1" style="text-align:left;">Trabajos preferentes: </label>
+						<%= f.text_field :sectorId, :maxlength =>"1000", :class=>"form_control otro-input" %>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="form-group1">
+					<label for="auto" class="col-sm-6 contol-label1" style="text-align:left;">¿Cuentas con movilzacion propia? </label>
+						<%= f.radio_button :auto, "No" %>No&nbsp;&nbsp;&nbsp;
+						<%= f.radio_button :auto, "Auto" %>Auto&nbsp;&nbsp;&nbsp;
+						<%= f.radio_button :auto, "Moto" %>Moto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<img src="http://www.flaticon.com/png/256/8235.png" title="Esta info es necesaria para ofrecerte aquellos trabajos en que necesitas movilzación
+	o poner publicidad en tu vehículo" width="15px" height="15px">
+				</div>
+			</td>
+			<td>
+				<div class="form-group1">
+					<style>
+					#student_anioAuto{
+						width:50px;
+					}
+					#student_marcaAuto{width:95px;}</style>
+						
+					<label for="auto" class="col-sm-6 contol-label1" style="text-align:left;">Si marcaste auto, ¿Cuál tienes?: </label>
+						
+						<%= f.select(:marcaAuto,  Auto.all.map { |auto| [auto.nombre] },  { include_blank: true },  { class: 'chosen-select1' } )%>
+						<%= f.select :anioAuto, (Time.now.year-50..Time.now.year).to_a, {:prompt =>"Año"}, { class: 'otro-input' } %>
+						<img src="http://www.flaticon.com/png/256/8235.png" title="Esta info es necesaria para ofrecerte aquellos trabajos en que
+	necesitas poner publicidad en tu vehículo" width="15px" height="15px">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="form-group1">
+					<label for="exp1" class="col-sm-6 contol-label1" style="text-align:left;">Tienes experiencia previa? </label>
+						
+						<%= f.radio_button :experiencia, true %> Si&nbsp;&nbsp;&nbsp;
+						
+						<%= f.radio_button :experiencia, false, :checked => true %> No
+				</div>
+			</td>
+			<td>
+				<div class="form-group1">
+					<label for="exp2" class="col-sm-6 contol-label1" style="text-align:left;">¿Dónde? </label>
+						<%= f.text_area :experiencias, :maxlength =>"1000", :class=>"form_control otro-input" %>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="form-group1">
+					<label for="hob" class="col-sm-6 contol-label1" style="text-align:left;">Escribe tus hobbies </label>
+						<%= f.text_area :hobbies, :placeholder=>"Fotografía, Programación web, origami, pintura, etc.",:maxlength =>"1000", :class=>"form_control otro-input" %>
+				</div>
+			</td>
+			<td>
+				<div class="form-group1">
+					<label for="dep" class="col-sm-6 contol-label1" style="text-align:left;">Indica que deporte practicas o te manejas</label>
+						<%= f.text_area :deportes, :placeholder=>"Futbol, ski, hockey, halterofilia, etc", :maxlength =>"1000", :class=>"form_control otro-input" %>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+    <%= f.submit 'Guardar y Enviar', :class=>'btn btn-large btn-block btn-default icon-ok-circle' %>
+<% end %>

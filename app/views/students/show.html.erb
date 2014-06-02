@@ -1,93 +1,107 @@
-<h3>Personas Ingresadas</h3>
-<div style="overflow:scroll;">
-	<br/>
-	<p>
-	  Download:
-	  <%= link_to "CSV", students_path(format: "csv") %> |
-	  <%= link_to "Excel", students_path(format: "xls") %>
-	</p>
-	<br/>
-		<table class="table table-stripped table-condensed" style="text-align:center color:#B7B7B7; overflow:scroll;">
-			<tr style="text-align:center color:white;">
-				<th>Link</th>
-				<th>Creado/<br/>Editado</th>
-				<th>ID</th>
-				<th>Nombre<br/>Apellido1<br/>Apellido2</th>
-				<th>Sexo</th>
-				<th>Rut</th>
-				<th>EMail</th>
-				<th>Cel<br/>Empresa<br/>Contrato</th>
-				<th>Hijos</th>
-				<th>Año Nacimiento</th>
-				<th>ComunaRegión</th>
-				<th>ColegioEstudios</th>
-				<th>Universidad/<br/>
-					Carrera</th>
-				<th>Ingreso/<br/>
-					Duracion/<br/>
-					Egreso</th>
-				<th>Ing,Ale,Port, Fra,Chi,Otros</th>
-				<th>Experiencia?</th>
-				<th>Donde?</th>
-				<th>Renta/hora</th>
-				<th>Sector preferente</th>
-				<th>Movilizacion?/<br/>
-					Marca/<br/>
-					Año/</th>
-				<th>Hobbiessssssssss</th>
-				<th>Deportesssssssss</th>
+<div class="pagecontainer1">
+		<% if user_signed_in? %>
+			<div style="float:right;">Signed in as <%= current_user.email %>. No eres tú?
+				<%= link_to "Cerrar sesión", destroy_user_session_path, :method=> :delete %>
+			</div>
+		<h1>Personas Ingresadas</h1>
+		<div style="max-height:500px;overflow:scroll;">
+			<p>
+			  Download:
+			  <%= link_to "CSV", students_path(format: "csv") %> |
+			  <%= link_to "Excel", students_path(format: "xls") %>
+			</p>
+				<table class="table table-stripped table-condensed" style="text-align:center color:#B7B7B7; overflow:scroll;">
+					<tr style="text-align:center color:white;">
+						<th>Link</th>
+						<th>Creado/<br/>Editado</th>
+						<th>ID</th>
+						<th>Nombre<br/>Apellido1<br/>Apellido2</th>
+						<th>Sexo</th>
+						<th>Rut</th>
+						<th>EMail</th>
+						<th>Cel<br/>Empresa<br/>Contrato</th>
+						<th>Hijos</th>
+						<th>Año Nacimiento</th>
+						<th>ComunaRegión</th>
+						<th>ColegioEstudios</th>
+						<th>Universidad/<br/>
+							Carrera</th>
+						<th>Ingreso/<br/>
+							Duracion/<br/>
+							Egreso</th>
+						<th>Ing,Ale,Port, Fra,Chi,Otros</th>
+						<th>Experiencia?</th>
+						<th>Donde?</th>
+						<th>Renta/hora</th>
+						<th>Sector preferente</th>
+						<th>Movilizacion?/<br/>
+							Marca/<br/>
+							Año/</th>
+						<th>Hobbies</th>
+						<th>Deportes</th>
 
-			</tr>
+					</tr>
 
-		   
-		<% if !@students.blank? %>
-			<% for item in @students %>
-				<tr>
-					<td>
-						<%= link_to 'Editar', edit_student_path(item) %>
-						<%= link_to 'Borrar', student_path(item), method: :delete, data: { confirm: '¿Seguro que quieres eliminar esta entrada? 
-							Luego de esta acción no hay vuelta atrás' } %>
-					</td>
-					<td><%= item.created_at %>
-						<%= item.updated_at %>
-					</td>
-					<td><%= item.id %></td>
-					<td><%= item.firstname %>
-						<%= item.lastname %>
-						<%= item.secondlastname %> </td>
-					<td><%= item.sexo %> </td>
-					<td><%= item.rut %></td>
-					<td><%= item.email %> </td>
-					<td><%= item.cel %><br/>
-						<%= item.empresaCel %><br/>
-						<%= item.contratoCel %></td>
-					<td><%= item.hijos %></td>
-					<td><%= item.fechaNac %></td>
-					<td style="width:300px;"><%= item.comunaId %></td>
-					<td><%= item.colegioId %></td>
-					<td><%= item.universidadId %>/<br/>
-						<%= item.carreraId %></td>
-					<td><%= item.fechaIngreso %>/<br/>
-						<%= item.duracion %>/<br/>
-						<%= item.fechaEgreso %></td>
-					<td><%= item.nivelIngles %><br/>
-						<%= item.nivelAleman %><br/>
-						<%= item.nivelPortugues %><br/>
-						<%= item.nivelFrances %><br/>
-						<%= item.nivelChino %><br/>
-						<%= item.OtrosIdiomas %></td>
-					<td><%= item.experiencia %></td>
-					<td><%= item.experiencias %></td>
-					<td><%= item.rentaHora %></td>
-					<td><%= item.sectorId %></td>
-					<td><%= item.auto %>/<br/>
-						<%= item.marcaAuto %>/<br/>
-						<%= item.anioAuto %></td>
-					<td><%= item.hobbies %></td>
-					<td><%= item.deportes %></td>
-				</tr>
-			<% end %>
-		<% else %>
-		<% end %>
-	</table>
+				   
+				<% if !@students.blank? %>
+					<% for item in @students %>
+						<tr>
+							<td>
+								<%= link_to 'Editar', edit_student_path(item) %>
+								<%= link_to 'Borrar', student_path(item), method: :delete, data: { confirm: '¿Seguro que quieres eliminar esta entrada? 
+									Luego de esta acción no hay vuelta atrás' } %>
+							</td>
+							<td><%= item.created_at %>
+								<%= item.updated_at %>
+							</td>
+							<td><%= item.id %></td>
+							<td><%= item.firstname %>
+								<%= item.lastname %>
+								<%= item.secondlastname %> </td>
+							<td><%= item.sexo %> </td>
+							<td><%= item.rut %></td>
+							<td><%= item.email %> </td>
+							<td><%= item.cel %><br/>
+								<%= item.empresaCel %><br/>
+								<%= item.contratoCel %></td>
+							<td><%= item.hijos %></td>
+							<td><%= item.fechaNac %></td>
+							<td style="width:300px;"><%= item.comunaId %></td>
+							<td><%= item.colegioId %></td>
+							<td><%= item.universidadId %>/<br/>
+								<%= item.carreraId %></td>
+							<td><%= item.fechaIngreso %>/<br/>
+								<%= item.duracion %>/<br/>
+								<%= item.fechaEgreso %></td>
+							<td><%= item.nivelIngles %><br/>
+								<%= item.nivelAleman %><br/>
+								<%= item.nivelPortugues %><br/>
+								<%= item.nivelFrances %><br/>
+								<%= item.nivelChino %><br/>
+								<%= item.OtrosIdiomas %></td>
+							<td><%= item.experiencia %></td>
+							<td><%= item.experiencias %></td>
+							<td><%= item.rentaHora %></td>
+							<td><%= item.sectorId %></td>
+							<td><%= item.auto %>/<br/>
+								<%= item.marcaAuto %>/<br/>
+								<%= item.anioAuto %></td>
+							<td><%= item.hobbies %></td>
+							<td><%= item.deportes %></td>
+						</tr>
+					<% end %>
+				<% else %>
+				<% end %>
+			</table>
+		</div>
+	<% else %>
+		<h3> Debes iniciar sesión para continuar</h3>
+		<h5>Si ya tienes una cuenta, haz click 
+		<%= link_to "acá", new_user_session_path %> ó
+		<%= link_to "crea una cuenta", new_user_registration_path %>
+		</h5>
+	<% end %>
+	<% flash.each do |name, msg| %>
+		<%= content_tag :div, msg, :id => "flash_#{name}" %>
+	<%end%>
 </div>

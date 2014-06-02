@@ -1,17 +1,56 @@
-<h2>Sign in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
-
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
-
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<div class="pagecontainer1">
+	<h1>Inicia Sesión</h1>
+	<br/>
+	<div style="width:400px; vertical-align:middle; margin-left:auto; margin-right:auto;">
+	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+	<table>
+		<tr>
+			<td colspan="2">
+				<div style="text-align:center;">
+					<%= link_to "Iniciar sesión con Facebook", user_omniauth_authorize_path(:facebook) %>
+				</div>
+			</td>
+		</tr>	
+	  	<tr>
+	  		<td>
+			  <label for="auto" class="contol-label1" style="text-align:right; font-size:130%">Email: </label>
+			</td>
+			<td>
+	  			<%= f.email_field :email, autofocus: true, :class=>'otro-sign' %>
+	  		</td>
+	  	</tr>
+	  	<tr>
+	  		<td>
+	  			<label for="auto" class="contol-label1" style="text-align:right; font-size:130%">Clave: </label>
+	  		</td>
+			<td>
+	  			<%= f.password_field :password, autocomplete: "off", :class=>'otro-sign' %>
+	  		</td>
+	  	</tr>
+	  	<% if devise_mapping.rememberable? -%>
+	  	<tr>
+			<td>
+	  			<label for="auto" class="contol-label1" style="text-align:right; font-size:130%">Recordarme </label>
+	  		</td>
+	  		<td>
+	   			<div><%= f.check_box :remember_me %><%#= f.label :remember_me %></div>
+			</td>
+	  	</tr>
+	  	<% end -%>
+	  	<tr>
+	  		<td colspan="2">
+	  			<%= f.submit "Entrar!", :class=>'btn btn-large btn-block btn-default icon-ok-circle' %>
+	  		</td>
+	  	</tr>
+	  	<% end %>
+	  	<tr>
+	  		<td colspan="2">
+	  			<div style="float:right;">
+	  				<%= render "devise/shared/links" %>
+	  			</div>
+	  		</td>
+	  	</tr>
+	  </table>
+	</div>
+</div>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/>

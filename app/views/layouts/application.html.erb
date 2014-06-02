@@ -9,7 +9,7 @@
 <html lang="es-ES">
 <!--<![endif]-->
 <head>
-  <title>UWork</title>
+<title>UWork - Trabajos part-time/freelance para estudiantes</title>
 <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 <%= csrf_meta_tags %>
@@ -116,15 +116,15 @@ a,.ske-footer-container ul li:hover:before,.ske-footer-container ul li:hover > a
       <div id="header1" class="skehead-headernav1 clearfix1" style="border-bottom:0px solid; position:absolute;">
         <% if flash[:error] -%>
           <p class='error' id="error"><%=h flash[:error] %></p>
-          <%= javascript_tag "$('#error').fadeOut(15000)" %>
+          <%= javascript_tag "$('#error').fadeOut(5000)" %>
         <% end -%>
         <% if flash[:notice] -%>
           <p class='notice' id="notice"><%=h flash[:notice] %></p>
-          <%= javascript_tag "$('#notice').fadeOut(15000)" %>
+          <%= javascript_tag "$('#notice').fadeOut(5000)" %>
         <% end -%>
         <% if flash[:alert] -%>
           <p class='alert' id="alert"><%=h flash[:alert] %></p>
-          <%= javascript_tag "$('#alert').fadeOut(15000)" %>
+          <%= javascript_tag "$('#alert').fadeOut(5000)" %>
         <% end -%>
         <div class="glow1">
           <div id="skehead1">
@@ -132,7 +132,7 @@ a,.ske-footer-container ul li:hover:before,.ske-footer-container ul li:hover > a
               <div class="row-fluid clearfix1">  
                 <!-- #logo -->
                 <div>
-                  <a title="UWork" href="inicio" >
+                  <a title="UWork" href="/inicio" >
                     <img id="logo1" src="/images/logouwork2.png"/>
                   </a>
                 </div>
@@ -201,7 +201,7 @@ a,.ske-footer-container ul li:hover:before,.ske-footer-container ul li:hover > a
           <div class="container">
             <div class="row-fluid">
               <div class="copyright span6 alpha omega">
-                <a href="http://www.ryoassets.com"> Proyecto de RYO Assets </a>
+                <a href="http://www.ryoassets.com"> Proyecto de RYO Assets</a><a href="#"> y PROTAM</a>
               </div>
               <div class="owner span6 alpha omega">UWork.cl - El primer portal laboral dedicado 100% a los estudiantes. | 
               <a href="https://plus.google.com/106369342059997764130" rel="publisher">Google+</a>|

@@ -1,19 +1,21 @@
 Uwork::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  match '/users/:id', :to => 'users#show',    :as => :user,         :via => :get
+  match '/users/:id', :to => 'users#destroy', :as => :destroy_user, :via => :delete
   get "students/show"
   get "contacts/form_empresa"
   match '/form_empresa', to:'contacts#form_empresa', via:'get'
   get "contacts/new"
   match '/contacto', to:'contacts#new', via:'get'
+  get "devise/registrations/new"
   get "students/new"
   match '/postula', to:'students#new', via:'get'
+  get "users/show"
   get "welcome/index"
   match '/inicio', to:'welcome#index', via:'get'
   get "welcome/empresas"
   match '/empresas', to:'welcome#empresas', via:'get'
   root :to => 'welcome#index'
-
-  #DELETE /students/ 'students#destroy'
 
   resources :contacts
   resources :students

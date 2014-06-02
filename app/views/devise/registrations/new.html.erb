@@ -1,18 +1,57 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
-
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
-
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<div class="pagecontainer1">
+	<h1>Crea una cuenta</h1>
+	<br/>
+	<div style="width:400px; vertical-align:middle; margin-left:auto; margin-right:auto;">
+	<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :class => 'form-inline' }) do |f| %>
+	<br/>
+	  <%= devise_error_messages! %>
+	  <table>
+	  	<tr>
+			<td colspan="2">
+				<div style="text-align:center;">
+					<%= link_to "Click aquí para iniciar sesión con Facebook", user_omniauth_authorize_path(:facebook) %>
+				</div>
+			</td>
+		</tr>	
+	  	<tr>
+	  		<td>
+			  <label for="auto" class="contol-label1" style="text-align:right; font-size:130%">Email: </label>
+			</td>
+			<td>
+	  			<%= f.email_field :email, autofocus: true, :class=>'otro-sign' %>
+	  		</td>
+	  	</tr>
+	  	<tr>
+	  		<td>
+	  			<label for="auto" class="contol-label1" style="text-align:right; font-size:130%">Clave: </label>
+	  		</td>
+			<td>
+	  			<%= f.password_field :password, autocomplete: "off", :class=>'otro-sign' %>
+	  		</td>
+	  	</tr>
+	  	<tr>
+	  		<td>
+	  			<label for="auto" class="contol-label1" style="text-align:right; font-size:130%">Confirmar Clave: </label>
+	  		</td>
+			<td>
+				<%= f.password_field :password_confirmation, autocomplete: "off", :class=>'otro-sign' %>
+			</td>
+	  	</tr>
+	  	<tr>
+	  		<td colspan="2">
+	  			<%= f.submit "Crear cuenta!", :class=>'btn btn-large btn-block btn-default icon-ok-circle' %>
+	  			<% end %>
+	  		</td>
+	  	</tr>
+	  	<tr>
+	  		<td colspan="2">
+	  			<div style="float:right;">
+	  				<%= render "devise/shared/links" %>
+	  			</div>
+	  		</td>
+	  	</tr>
+	  </table>
+	
+	</div>	
+</div>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/>

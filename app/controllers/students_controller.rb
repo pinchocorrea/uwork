@@ -1,6 +1,10 @@
 class StudentsController < ApplicationController
 	def new
 		@student = Student.new
+		if user_signed_in?
+			@student1 = Student.find_by email:current_user.email
+			#@student2 = Student.find_by_email!(current_user.email)
+		end
 	end
 
 	def create
@@ -24,9 +28,8 @@ class StudentsController < ApplicationController
 			render 'edit'
 		end
 	end
-
 	def student_params
-		params.require(:student).permit(:created_at, :updated_at, :firstname, :lastname, :secondlastname, :rut, :fechaNac, :comunaId, :hijos, :colegioId, :universidadId, :carreraId, :fechaIngreso, :duracion, :fechaEgreso, :experiencia, :experiencias, :rentaHora, :sectorId, :auto, :email, :cel, :sexo, :empresaCel, :contratoCel,  :nivelIngles, :nivelAleman, :nivelPortugues, :nivelFrances, :nivelChino, :OtrosIdiomas, :marcaAuto, :anioAuto, :hobbies, :deportes)
+		params.require(:student).permit(:email, :created_at, :updated_at, :firstname, :lastname, :secondlastname, :rut,:sexo,:fechaNac,:comunaId, :hijos, :colegioId, :universidadId, :carreraId, :fechaIngreso, :duracion, :fechaEgreso, :experiencia, :experiencias, :rentaHora, :sectorId, :auto, :cel, :empresaCel, :contratoCel,  :nivelIngles, :nivelAleman, :nivelPortugues, :nivelFrances, :nivelChino, :OtrosIdiomas, :marcaAuto, :anioAuto, :hobbies, :deportes)
 	end
 
 	def show
@@ -44,5 +47,11 @@ class StudentsController < ApplicationController
 		@student = Student.find(params[:id])
 		@student.destroy
 		redirect_to students_show_path
+	end
+	def self.find_for_facebook_oauth(auth)
+	  where(auth.slice(:provider, :uid)).first_or_create do |student|
+	    student.firstname = auth.info.name   # assuming the user model has a name
+	    #user.image = auth.info.image # assuming the user model has an image
+	  end
 	end
 end
