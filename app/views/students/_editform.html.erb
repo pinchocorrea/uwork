@@ -190,52 +190,54 @@
 					<%= f.select :fechaEgreso, (Time.now.year..Time.now.year+10).to_a, {:prompt => ""}, { class: 'chosen-select' } %>
 				</div>
 			</td>
+
 		</tr>
 		<tr>
 			<td colspan="2">
 				<div class="form-group1">
 					<table style="margin-left:40px; margin-top:10px; margin-bottom:0px;">
 						<tr>
-							<td style="border:0px solid black; text-align:right;">
-							<%= label_tag(:nivelIngles, "Nivel de Ingles: ",class: 'contol-label1') %>
-							</td>
-							<td style="border:0px solid black; text-align:right;">
-							<%= f.select(:nivelIngles, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), 
-							{ class: 'otro-input' } )%>
-							</td>
-							<td style="border:0px solid black; text-align:right;">
-							<%= label_tag(:nivelAleman, "Nivel de Aleman: ",class: 'contol-label1') %>
-							</td>
-							<td style="border:0px solid black; text-align:right;">
-							<%= f.select(:nivelAleman, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), { class: 'otro-input' })%>
-							</td>
-							<td style="border:0px solid black; text-align:right;">
-							<%= label_tag(:nivelFrances, "Nivel de Frances: ",class: 'contol-label1') %>
-							</td>
-							<td style="border:0px solid black; text-align:right;">
-							<%= f.select(:nivelFrances, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), { class: 'otro-input' })%>
-							</td>
-						</tr>
-						<tr>
-							<td style="border:0px solid black; text-align:right;">
-							<%= label_tag(:nivelPortugues, "Nivel de Portugues: ",class: 'contol-label1') %>
-							</td>
-							<td style="border:0px solid black; text-align:right;">
-							<%= f.select(:nivelPortugues, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), { class: 'otro-input' })%>
-							</td>
-							<td style="border:0px solid black; text-align:right;">
-							<%= label_tag(:nivelChino, "Nivel de Chino: ",class: 'contol-label1') %>
-							</td>
-							<td style="border:0px solid black; text-align:right;">
-							<%= f.select(:nivelChino, options_for_select([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), { class: 'otro-input' })%>
-							</td>
-							<td style="border:0px solid black; text-align:right;">
-							<%= label_tag(:OtrosIdiomas, "Otro idioma: ",class: 'contol-label1') %>
-							</td>
-							<td style="border:0px solid black; text-align:right;">
-							<%= f.text_field :OtrosIdiomas, :class=>"form_control otro-input" %>
-							</td>
-						</tr>
+			              <td style="border:0px solid black; text-align:right;">
+			              	<label for="ingles" class="contol-label1" style="text-align:right;">Nivel de Inglés </label>
+			              </td>
+			              <td style="border:0px solid black; text-align:right;">
+			              
+			              <%= f.select(:nivelIngles, ([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), {:prompt=>"Elige"}, {class: 'chosen-select1' })%>
+			              </td>
+			              <td style="border:0px solid black; text-align:right;">
+			              <%= label_tag(:nivelAleman, "Nivel de Aleman: ",class: 'contol-label1') %>
+			              </td>
+			              <td style="border:0px solid black; text-align:right;">
+			              <%= f.select(:nivelAleman, ([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), {:prompt=>"Elige"}, { class: 'chosen-select1' })%>
+			              </td>
+			              <td style="border:0px solid black; text-align:right;">
+			              <%= label_tag(:nivelFrances, "Nivel de Frances: ",class: 'contol-label1') %>
+			              </td>
+			              <td style="border:0px solid black; text-align:right;">
+			              <%= f.select(:nivelFrances, ([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), {:prompt=>"Elige"}, { class: 'chosen-select1' })%>
+			              </td>
+			            </tr>
+			            <tr>
+			              <td style="border:0px solid black; text-align:right;">
+			              <%= label_tag(:nivelPortugues, "Nivel de Portugues: ",class: 'contol-label1') %>
+			              </td>
+			              <td style="border:0px solid black; text-align:right;">
+			              <%= f.select(:nivelPortugues, ([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), {:prompt=>"Elige"}, { class: 'chosen-select1', style: 'float:left;' })%>
+
+			              </td>
+			              <td style="border:0px solid black; text-align:right;">
+			              <%= label_tag(:nivelChino, "Nivel de Chino: ",class: 'contol-label1') %>
+			              </td>
+			              <td style="border:0px solid black; text-align:right;">
+			              <%= f.select(:nivelChino, ([['Nulo'],['Básico'],['Medio'],['Avanzado'],['Nativo']]), {:prompt=>"Elige"}, { class: 'chosen-select1' })%>
+			              </td>
+			              <td style="border:0px solid black; text-align:right;">
+			              <%= label_tag(:OtrosIdiomas, "Otro idioma: ",class: 'contol-label1') %>
+			              </td>
+			              <td style="border:0px solid black; text-align:right;">
+			              <%= f.text_field :OtrosIdiomas, :class=>"form_control otro-input" %>
+			              </td>
+			            </tr>
 					</table>
 				</div>
 			</td>
