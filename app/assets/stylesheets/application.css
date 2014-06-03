@@ -236,3 +236,40 @@ border-color: #d6e9c6;
 color: #468847;
 text-align: left;
 }
+.p1 {
+         font-family: "Century Gothic";
+         text-align: center;
+         font-size: 140%;
+}
+    .p2 {
+         font-family: "Century Gothic";
+         text-align: center;
+         font-size:115%;
+}
+    .p3 {
+         font-family: "Century Gothic";
+         text-align: center;
+         font-size:105%;
+}
+    .p4 {
+         font-family: "Century Gothic";
+         text-align: justify;
+         font-size:80%;
+}
+    .p10 {
+         font-family: "Century Gothic";
+         text-align: center;
+         font-size:165%;
+         color:#0088cc;
+}
+    .row {
+    	width:980px;
+         margin-right: auto;
+         margin-left: auto;
+         padding: 10px;
+
+}
+    .span4 {
+         padding-right: 1%;
+         padding-left: 1%;
+}
