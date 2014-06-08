@@ -57,7 +57,7 @@
 				<div class="form-group1">
 					<style> #student_sexo{width:150px;}</style>
 					<label for="sexo" class="col-sm-5 contol-label1" style="text-align:left;">Género: </label>
-						<%= f.select(:sexo, options_for_select([['Masculino'],['Femenino'],['Otro']]),{:prompt=>""}, { class: 'chosen-select' })%>
+						<%= f.select(:sexo, ([['Masculino'],['Femenino'],['Otro']]),{:prompt=>""}, { class: 'chosen-select' })%>
 				</div>
 			</td>
 		</tr>
@@ -87,8 +87,8 @@
 			<td>
 				<div class="form-group1">
 					<label for="Empresa celular" class="col-sm-5 contol-label1" style="text-align:left;">Empresa Celular: </label>
-						<%= f.select(:empresaCel, options_for_select([['Claro'],['Entel'],['Movistar'],['Virgin'],['Vtr']]), {:prompt=>""}, { class: 'chosen-select1' })%>
-						<%= f.select(:contratoCel, options_for_select([['Plan'],['Prepago']]), {:prompt=>""}, { class: 'otro-input2' })%>
+						<%= f.select(:empresaCel, ([['Claro'],['Entel'],['Movistar'],['Virgin'],['Vtr']]), {:prompt=>""}, { class: 'chosen-select1' })%>
+						<%= f.select(:contratoCel, ([['Plan'],['Prepago']]), {:prompt=>""}, { class: 'otro-input2' })%>
 						<img src="http://www.flaticon.com/png/256/8235.png" title="Esta info es necesaria para clasficar a los candidatos
 	para aquellas pegas que es necesario usar el teléfono" width="15px" height="15px">
 				</div>
